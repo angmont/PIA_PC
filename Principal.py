@@ -57,11 +57,11 @@ if tarea == 'correos':
         hunter = PyHunter(apikey)
         orga = (params.dominio)
 
-        datosEncontrados = Busqueda(orga)
-        if datosEncontrados is None:
+        Correos_Modulo.datosEncontrados = Correos_Modulo.Busqueda(orga)
+        if Correos_Modulo.datosEncontrados is None:
             exit()
         else:
-            GuardarInformacion(datosEncontrados, orga)
+            Correos_Modulo.GuardarInformacion(datosEncontrados, orga)
      except Exception as e:
         print(e)
         exit
