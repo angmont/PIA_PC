@@ -61,7 +61,7 @@ if tarea == 'correos':
         if Correos_Modulo.datosEncontrados is None:
             exit()
         else:
-            Correos_Modulo.GuardarInformacion(datosEncontrados, orga)
+            Correos_Modulo.GuardarInformacion(Correos_Modulo.datosEncontrados, orga)
      except Exception as e:
         print(e)
         exit
