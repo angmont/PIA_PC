@@ -11,13 +11,14 @@ from email.mime.text import MIMEText
 
 def Busqueda(organizacion):
 
+    apikey = getpass.getpass("Ingresa tu API key: ")
     hunter = PyHunter(apikey)
     resultado = hunter.domain_search(company=organizacion, limit=1,
                                      emails_type='personal')
     return resultado
 
 
-def GuardarInformacion(datosEncontrados, organizacion, remitente, destinatario, password, asunto, mensaje):
+def GuardarInformacion(datosEncontrados, organizacion, remitente, destinatario, asunto, mensaje):
     libro = Workbook()
     hoja = libro.active
     hoja["A1"] = "Dominio"

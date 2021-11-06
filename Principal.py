@@ -57,11 +57,12 @@ elif tarea == 'correos':
         asunto = (params.asunto)
         orga = (params.dominio)
 
-        datosEncontrados = Correos_Modulo.Busqueda(orga)
-        if Correos_Modulo.datosEncontrados is None:
+        datos_encontrados = Correos_Modulo.Busqueda(orga)
+        if datos_encontrados is None:
+            print("No se encontró nada")
             exit()
         else:
-            Correos_Modulo.GuardarInformacion(datosEncontrados, orga, remitente, destinatario, asunto, mensaje)
+            Correos_Modulo.GuardarInformacion(datos_encontrados, orga, remitente, destinatario, asunto, mensaje)
     except Exception as e:
         print(e)
         exit
