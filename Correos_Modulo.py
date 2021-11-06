@@ -74,10 +74,8 @@ def GuardarInformacion(datosEncontrados, organizacion, remitente, destinatario, 
     with smtplib.SMTP("smtp.office365.com", 587) as server:
         try:
             print("[+] Conectando con el Servidor de Correo.")
-            server.ehlo()
             print("[+] Iniciando Encriptación de Sesión.")
             server.starttls(context=context)
-            server.ehlo()
             print("[+] Iniciando Sesión en el Servidor de Correo.")
             server.login(remitente, password)
             print("[+] Enviando Correo.")
