@@ -11,12 +11,13 @@ from email.mime.text import MIMEText
 
 def Busqueda(organizacion):
 
+    hunter = PyHunter(apikey)
     resultado = hunter.domain_search(company=organizacion, limit=1,
                                      emails_type='personal')
     return resultado
 
 
-def GuardarInformacion(datosEncontrados, organizacion):
+def GuardarInformacion(datosEncontrados, organizacion, remitente, destinatario, password, asunto, mensaje):
     libro = Workbook()
     hoja = libro.active
     hoja["A1"] = "Dominio"
@@ -43,11 +44,11 @@ def GuardarInformacion(datosEncontrados, organizacion):
 
 
     email_msg = MIMEMultipart("alternative")
-    email_msg["From"] = Remitente
-    email_msg["To"] = Destinatario
-    email_msg["Subject"] = Asunto
+    email_msg["From"] = remitente
+    email_msg["To"] = destinatario
+    email_msg["Subject"] = asunto
 
-    email_msg.attach(MIMEText(Mensaje, "plain"))
+    email_msg.attach(MIMEText(mensaje, "plain"))
 
     
     filename = archivo   
@@ -67,7 +68,7 @@ def GuardarInformacion(datosEncontrados, organizacion):
 
     email_msg.attach(part)
 
-
+    password = getpass.getpass("Ingrese su contraseña: ")
     context = ssl.create_default_context()
     with smtplib.SMTP("smtp.office365.com", 587) as server:
         try:
@@ -77,11 +78,11 @@ def GuardarInformacion(datosEncontrados, organizacion):
             server.starttls(context=context)
             server.ehlo()
             print("[+] Iniciando Sesión en el Servidor de Correo.")
-            server.login(Remitente, password)
+            server.login(remitente, password)
             print("[+] Enviando Correo.")
             server.sendmail(
-            Remitente, Destinatario, email_msg.as_string()
+            remitente, destinatario, email_msg.as_string()
             )
-            print("[+] Correo Electrónico Enviado con Éxito a: %s" % (Destinatario))
+            print("[+] Correo Electrónico Enviado con Éxito a: %s" % (destinatario))
         except:
             print("[-] Error al Enviar el Correo.")

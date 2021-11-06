@@ -3,8 +3,7 @@ import NoPrincipal
 import Correos_Modulo
 import argparse
 import os, time
-import getpass
-from pyhunter import PyHunter
+
 
 if __name__ == "__main__":
   description= ("Este script realiza una gran diversa cantidad de tareas " +
@@ -52,20 +51,17 @@ if tarea == 'cifrar':
         exit
 elif tarea == 'correos':
     try:
-        Remitente = (params.remitente)
-        Destinatario = (params.destinatario)
-        Mensaje = (params.contenido)
-        Asunto = (params.asunto)
-        password = getpass.getpass("Ingrese su contraseña: ")
-        apikey = getpass.getpass("Ingresa tu API key: ")
-        hunter = PyHunter(apikey)
+        remitente = (params.remitente)
+        destinatario = (params.destinatario)
+        mensaje = (params.contenido)
+        asunto = (params.asunto)
         orga = (params.dominio)
 
-        Correos_Modulo.datosEncontrados = Correos_Modulo.Busqueda(orga)
+        datosEncontrados = Correos_Modulo.Busqueda(orga)
         if Correos_Modulo.datosEncontrados is None:
             exit()
         else:
-            Correos_Modulo.GuardarInformacion(Correos_Modulo.datosEncontrados, orga)
+            Correos_Modulo.GuardarInformacion(datosEncontrados, orga, remitente, destinatario, asunto, mensaje)
     except Exception as e:
         print(e)
         exit
