@@ -3,6 +3,8 @@ import NoPrincipal
 import Correos_Modulo
 import argparse
 import os, time
+import getpass
+from pyhunter import PyHunter
 
 if __name__ == "__main__":
   description= ("Este script realiza una gran diversa cantidad de tareas " +
@@ -15,11 +17,11 @@ if __name__ == "__main__":
   parser.add_argument("-llave", metavar='LLAVE', dest="llave", type=int, help='Se utiliza para saber a base de cual llave se cifra o descifra el mensaje')
   parser.add_argument("-usuario", metavar='USUARIO', dest="usuario", type=str, help='Es un argumento necesario para la funcion de cifrar los resultados obtenidos de la API de Github')
   parser.add_argument("-ruta", metavar='RUTA', dest="ruta", type=str, help='Ruta necesaria para el txt que se va a descifrar')
-  parser.add_argument('-remitente', type=str , help='Correo del que se enviará el mensaje.')
-  parser.add_argument('-destinatario', type=str , help='Correo que recibirá el mensaje.')
-  parser.add_argument('-dominio', type=str , help='Dominio a investigar.')
-  parser.add_argument('-mensaje', type=str, help='Se debe poner un mensaje el cual se quiera enviar.',default = "Hola mundo mundial")
-  parser.add_argument('-asunto', type=str, help='Se utiliza para poner el titulo que tendrá el correo.', default="Hola!")
+  parser.add_argument("-remitente", type=str, help='Correo del que se enviará el mensaje.')
+  parser.add_argument("-destinatario", type=str, help='Correo que recibirá el mensaje.')
+  parser.add_argument("-dominio", type=str, help='Dominio a investigar.')
+  parser.add_argument("-contenido", type=str, help='Se debe poner un mensaje el cual se quiera enviar.', default="Hola mundo mundial")
+  parser.add_argument("-asunto", type=str, help='Se utiliza para poner el titulo que tendrá el correo.', default="Hola!")
   params = parser.parse_args()
 try: 
     tarea = (params.tarea)
@@ -52,7 +54,7 @@ elif tarea == 'correos':
     try:
         Remitente = (params.remitente)
         Destinatario = (params.destinatario)
-        Mensaje = (params.mensaje)
+        Mensaje = (params.contenido)
         Asunto = (params.asunto)
         password = getpass.getpass("Ingrese su contraseña: ")
         apikey = getpass.getpass("Ingresa tu API key: ")
@@ -64,7 +66,7 @@ elif tarea == 'correos':
             exit()
         else:
             Correos_Modulo.GuardarInformacion(Correos_Modulo.datosEncontrados, orga)
-     except Exception as e:
+    except Exception as e:
         print(e)
         exit
 elif tarea == 'dns':  
