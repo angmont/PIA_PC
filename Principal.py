@@ -10,7 +10,7 @@ if __name__ == "__main__":
   "las cuales son las siguientes: realizar cifrados, obtener metadata, " +
   "escaneo de puertos, envio de correos y ")
   parser = argparse.ArgumentParser(description="PIA", epilog=description, formatter_class=argparse.RawDescriptionHelpFormatter)
-  parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns'] , help='Se elige la tarea a realizar', required=True)
+  parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns', 'puertos'] , help='Se elige la tarea a realizar', required=True)
   parser.add_argument("-m", metavar='MODO', dest="modo", choices=['cifmensaje', 'desmensaje', 'cifgithub', 'desgithub'] , help='Si desea utilizar la tarea de cifrado/descifrado, es necesario especificiar el modo')
   parser.add_argument("-msj", metavar='MENSAJE', dest="mensaje", type=str, help='Se debe poner un mensaje el cual se quiera cifrar o descifrar.')
   parser.add_argument("-key", metavar='LLAVE', dest="llave", type=int, help='Se utiliza para saber a base de cual llave se cifra o descifra el mensaje')
@@ -74,3 +74,13 @@ elif tarea == 'dns':
 	    script_p.wait()
     except Exception as e:
 	    print(e)
+elif tarea == 'puertos':
+    try:
+	    dominio = (params.dominio)
+	    print("Trabajaremos con el dominio: " + dominio)
+	    puerto
+	
+	
+	
+	
+	
