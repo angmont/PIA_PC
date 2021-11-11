@@ -78,7 +78,12 @@ elif tarea == 'puertos':
     try:
 	    dominio = (params.dominio)
 	    print("Trabajaremos con el dominio: " + dominio)
-	    puerto
+	
+	    checoPuertos(dominio)
+		
+    except Exception as e:
+	print(e)
+	exit()
 	
 	
 	
