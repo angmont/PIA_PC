@@ -101,7 +101,7 @@ elif tarea == 'metadata':
         elif (archivo == 'word') or (archivo == 'words'):
             path = (params.path)
             metapath = (params.metapath)
-            if archivo == 'pdf':
+            if archivo == 'word':
                 MetaDataPIA.printOneMetaDocx(path, metapath)
             else:
                 MetaDataPIA.printAllMetaDocx(path, metapath)
