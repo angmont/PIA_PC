@@ -62,7 +62,7 @@ def cifrar_github(usuario, clave):
         return (dic1['message'])
     except:
       pass
-    escritura = open("encriptado.txt", "a")
+    escritura = open("cifgithub.txt", "a")
     for element in dic1:
       i = i + 1
       adios =("Repositorio " + str(i) + "\n\n")
@@ -80,7 +80,7 @@ def cifrar_github(usuario, clave):
 def descifrar_github(path, clave):
 
   lectura = open(path, "r")
-  escritura = open("descifrado.txt", "a")
+  escritura = open("desgithub.txt", "a")
   for linea in lectura:
     mensaje = descifrar_mensaje(linea, clave)
     escritura.write(mensaje)
