@@ -126,3 +126,7 @@ elif tarea == 'puertos':
         portlist[i] = int(portlist[i])
 		
       socketpuertos.checoPuertos(ip, portlist, puertoss)
+
+    except Exception as e:
+      print(e)
+      exit
