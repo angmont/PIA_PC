@@ -6,7 +6,6 @@ def cifrar_mensaje(mensaje, key):
   translated = ''
 
   for symbol in mensaje:
-    # Note: Only symbols in the `SYMBOLS` string can be encrypted/decrypted.
     if symbol in universo:
         symbolIndex = universo.find(symbol)
         translatedIndex = symbolIndex + key
@@ -18,7 +17,6 @@ def cifrar_mensaje(mensaje, key):
 
         translated = translated + universo[translatedIndex]
     else:
-        # Append the symbol without encrypting/decrypting:
         translated = translated + symbol
 
   return(translated)
@@ -31,7 +29,6 @@ def descifrar_mensaje(mensaje, key):
 
 
  for symbol in mensaje:
-    # Note: Only symbols in the `SYMBOLS` string can be encrypted/decrypted.
     if symbol in universo:
         symbolIndex = universo.find(symbol)
         translatedIndex = symbolIndex - key
@@ -43,7 +40,6 @@ def descifrar_mensaje(mensaje, key):
 
         translated = translated + universo[translatedIndex]
     else:
-        # Append the symbol without encrypting/decrypting:
         translated = translated + symbol
 
  return(translated)
@@ -73,6 +69,7 @@ def cifrar_github(usuario, clave):
         msj2 = cifrar_mensaje(hello, clave)
         escritura.write(msj2)
       escritura.write("\n\n")
+    print('Hecho!')
     escritura.close()
   except Exception as e:
     print(e)
