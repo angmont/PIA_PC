@@ -1,0 +1,13 @@
+Metadata: ResolutionUnit - Value: 2 
+Metadata: ExifOffset - Value: 296 
+Metadata: ImageDescription - Value: IPTC CONTENT PANEL: DESCRIPTION 
+Metadata: YResolution - Value: 600.0 
+Metadata: Software - Value: Adobe Photoshop CS2 Windows 
+Metadata: Orientation - Value: 1 
+Metadata: DateTime - Value: 2009:05:19 10:56:21 
+Metadata: Copyright - Value: IPTC STATUS PANEL: COPYRIGHT NOTICE 
+Metadata: XResolution - Value: 600.0 
+Metadata: Artist - Value: IPTC CONTACT PANEL: CREATOR 
+Metadata: ColorSpace - Value: 65535 
+Metadata: ExifImageWidth - Value: 300 
+Metadata: ExifImageHeight - Value: 379 
