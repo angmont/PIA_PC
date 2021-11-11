@@ -1,7 +1,7 @@
 import subprocess
 import NoPrincipal
 import Correos_Modulo
-#import socketpuertos
+import socketpuertos
 import MetaDataPIA
 import argparse
 import os, time
@@ -23,8 +23,8 @@ if __name__ == "__main__":
   parser.add_argument("-dom", metavar= 'DOMINIO', dest="dominio", type=str, help='Dominio a investigar.')
   parser.add_argument("-cont", metavar='CONTENIDO', dest="contenido", type=str, help='Se debe poner un mensaje el cual se quiera enviar.', default="Hola mundo mundial")
   parser.add_argument("-asu", metavar='ASUNTO', dest="asunto", type=str, help='Se utiliza para poner el titulo que tendrá el correo.', default="Hola!")
-  #parser.add_argument("-ip", metavar='IP', dest="ip", type=str, help='Se debe introducir la ip a consultar, solo el ID de red.', deafult="172.217.15.")
-  #parser.add_argument("-ports", metavar='PUERTOS', dest="puertos", help='Introduce los puertos a revisar separados por una coma [80, 800]', deafult= "80, 800")
+  parser.add_argument("-ip", metavar='IP', dest="ip", type=str, help='Se debe introducir la ip a consultar, solo el ID de red.', default="172.217.15.")
+  parser.add_argument("-ports", metavar='PUERTOS', dest="puertos", help='Introduce los puertos a revisar separados por una coma [80,800]', default= "80,800")
   parser.add_argument("-a", metavar='ARCHIVO', dest="archivo", choices=['imagen', 'imagenes', 'pdf', 'pdfs', 'word', 'words', 'mp3', 'mp3s'] , help='Si desea utilizar la tarea de sacar la metadata, es necesario especificiar el tipo de archivo')
   parser.add_argument("-mp", metavar= 'METAPATH', dest="metapath", type=str, help='Ruta donde se guardarán los metadatas encontrados.')
   params = parser.parse_args()
@@ -114,3 +114,22 @@ elif tarea == 'metadata':
     except Exception as e:
         print(e)
         exit
+elif tarea == 'puertos':	
+    try:
+	ip = params.ip
+	print("Se revisará la ip: " + ip)
+	
+	puertoss = params.puertos
+	portlist = params.puertos.split(',')
+        for i in range (len(portlist)):
+          print("Con los puertos: " + portlist[i])
+          portlist[i] = int(portlist[i])
+		
+	socketpuertos.checoPuertos(ip, portlist, puertoss)
+	
+	
+	
+	
+	
+	
+	
