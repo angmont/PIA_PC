@@ -1,6 +1,7 @@
 import subprocess
 import NoPrincipal
 import Correos_Modulo
+import socketpuertos
 import argparse
 import os, time
 
@@ -21,6 +22,8 @@ if __name__ == "__main__":
   parser.add_argument("-dom", metavar= 'DOMINIO', dest="dominio", type=str, help='Dominio a investigar.')
   parser.add_argument("-cont", metavar='CONTENIDO', dest="contenido", type=str, help='Se debe poner un mensaje el cual se quiera enviar.', default="Hola mundo mundial")
   parser.add_argument("-asu", metavar='ASUNTO', dest="asunto", type=str, help='Se utiliza para poner el titulo que tendrá el correo.', default="Hola!")
+  parser.add_argument("-ip", metavar='IP', dest="ip", type=str, help='Se debe introducir la ip a consultar, solo el ID de red.', deafult="172.217.15.")
+  parser.add_argument("-ports", metavar='PUERTOS', dest="puertos", help='Introduce los puertos a revisar separados por una coma [80, 800]', deafult= "80, 800"
   params = parser.parse_args()
 try: 
     tarea = (params.tarea)
@@ -76,10 +79,16 @@ elif tarea == 'dns':
 	    print(e)
 elif tarea == 'puertos':
     try:
-	    dominio = (params.dominio)
-	    print("Trabajaremos con el dominio: " + dominio)
+            ip = (params.ip)
+	    print("Trabajaremos con la ip: " + ip)
+		      
+            portlist = params.ports.split(',')
+            for i in range (len(portlist)):
+                print("Puerto: " + portlist[i])
+		portlist[i] = int(portlist[i])
+	    print("Trabajaremos con la ip: " + dominio)
 	
-	    checoPuertos(dominio)
+	    socketpuertos.checoPuertos(ip, portlist)
 		
     except Exception as e:
 	print(e)
