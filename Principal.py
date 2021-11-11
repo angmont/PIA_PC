@@ -40,7 +40,6 @@ if tarea == 'cifrar':
                 print(NoPrincipal.descifrar_mensaje(mensaje, llave))
 
         elif modo == 'cifgithub':
-            print('hola')
             usuario = (params.usuario)
             NoPrincipal.cifrar_github(usuario, llave)
         else:
