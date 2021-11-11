@@ -17,7 +17,7 @@ if __name__ == "__main__":
   parser.add_argument("-msj", metavar='MENSAJE', dest="mensaje", type=str, help='Se debe poner un mensaje el cual se quiera cifrar o descifrar.')
   parser.add_argument("-key", metavar='LLAVE', dest="llave", type=int, help='Se utiliza para saber a base de cual llave se cifra o descifra el mensaje')
   parser.add_argument("-user", metavar='USUARIO', dest="usuario", type=str, help='Es un argumento necesario para la funcion de cifrar los resultados obtenidos de la API de Github')
-  parser.add_argument("-ru", metavar='RUTA', dest="ruta", type=str, help='Ruta necesaria para el txt que se va a descifrar')
+  parser.add_argument("-ru", metavar='RUTA', dest="ruta", type=str, help='Ruta necesaria para el txt que se va a descifrar o donde se encuentran los arctivos pata la funcion de metadata')
   parser.add_argument("-rem", metavar='REMITENTE', dest="remitente", type=str, help='Correo del que se enviará el mensaje.')
   parser.add_argument("-des", metavar='DESTINATARIO', dest="destinatario", type=str, help='Correo que recibirá el mensaje.')
   parser.add_argument("-dom", metavar= 'DOMINIO', dest="dominio", type=str, help='Dominio a investigar.')
@@ -26,7 +26,6 @@ if __name__ == "__main__":
   #parser.add_argument("-ip", metavar='IP', dest="ip", type=str, help='Se debe introducir la ip a consultar, solo el ID de red.', deafult="172.217.15.")
   #parser.add_argument("-ports", metavar='PUERTOS', dest="puertos", help='Introduce los puertos a revisar separados por una coma [80, 800]', deafult= "80, 800")
   parser.add_argument("-a", metavar='ARCHIVO', dest="archivo", choices=['imagen', 'imagenes', 'pdf', 'pdfs', 'word', 'words', 'mp3', 'mp3s'] , help='Si desea utilizar la tarea de sacar la metadata, es necesario especificiar el tipo de archivo')
-  parser.add_argument("-pa", metavar= 'PATH', dest="path", type=str, help='Path donde se encuentran los archivos para sacar su metadata.')
   parser.add_argument("-mp", metavar= 'METAPATH', dest="metapath", type=str, help='Ruta donde se guardarán los metadatas encontrados.')
   params = parser.parse_args()
 try: 
@@ -85,33 +84,33 @@ elif tarea == 'metadata':
     try:
         archivo = (params.archivo)
         if (archivo == 'imagen') or (archivo == 'imagenes'):
-            path = (params.path)
+            ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'imagen':
-                MetaDataPIA.printOneMetaImg(path, metapath)
+                MetaDataPIA.printOneMetaImg(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaImg(path, metapath)
+                MetaDataPIA.printAllMetaImg(ruta, metapath)
         elif (archivo == 'pdf') or (archivo == 'pdfs'):
-            path = (params.path)
+            ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'pdf':
-                MetaDataPIA.printOneMetaPDf(path, metapath)
+                MetaDataPIA.printOneMetaPDf(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaPDf(path, metapath)
+                MetaDataPIA.printAllMetaPDf(ruta, metapath)
         elif (archivo == 'word') or (archivo == 'words'):
-            path = (params.path)
+            ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'word':
-                MetaDataPIA.printOneMetaDocx(path, metapath)
+                MetaDataPIA.printOneMetaDocx(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaDocx(path, metapath)
+                MetaDataPIA.printAllMetaDocx(ruta, metapath)
         else:
-            path = (params.path)
+            ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'mp3':
-                MetaDataPIA.printOneMetaMp3(path, metapath)
+                MetaDataPIA.printOneMetaMp3(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaMp3(path, metapath)
+                MetaDataPIA.printAllMetaMp3(ruta, metapath)
     except Exception as e:
         print(e)
         exit
