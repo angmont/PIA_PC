@@ -1,7 +1,5 @@
-#Socket para revisar puertos 
-#Ayuda, se me habia olvidado el github JAJSJA SOS
-
-import Socket
+import socket
+import sys
 
 def checoPuertos(ip, portlist):
     try:
