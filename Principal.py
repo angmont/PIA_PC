@@ -116,16 +116,16 @@ elif tarea == 'metadata':
         exit
 elif tarea == 'puertos':	
     try:
-	ip = params.ip
-	print("Se revisará la ip: " + ip)
+      ip = params.ip
+      print("Se revisará la ip: " + ip)
 	
-	puertoss = params.puertos
-	portlist = params.puertos.split(',')
-        for i in range (len(portlist)):
-          print("Con los puertos: " + portlist[i])
-          portlist[i] = int(portlist[i])
+      puertoss = params.puertos
+      portlist = params.puertos.split(',')
+      for i in range (len(portlist)):
+        print("Con los puertos: " + portlist[i])
+        portlist[i] = int(portlist[i])
 		
-	socketpuertos.checoPuertos(ip, portlist, puertoss)
+      socketpuertos.checoPuertos(ip, portlist, puertoss)
 	
 	
 	
