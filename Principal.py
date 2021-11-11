@@ -2,6 +2,7 @@ import subprocess
 import NoPrincipal
 import Correos_Modulo
 import socketpuertos
+import MetaDataPIA
 import argparse
 import os, time
 
@@ -11,7 +12,7 @@ if __name__ == "__main__":
   "las cuales son las siguientes: realizar cifrados, obtener metadata, " +
   "escaneo de puertos, envio de correos y ")
   parser = argparse.ArgumentParser(description="PIA", epilog=description, formatter_class=argparse.RawDescriptionHelpFormatter)
-  parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns', 'puertos'] , help='Se elige la tarea a realizar', required=True)
+  parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns', 'puertos', 'metadata'] , help='Se elige la tarea a realizar', required=True)
   parser.add_argument("-m", metavar='MODO', dest="modo", choices=['cifmensaje', 'desmensaje', 'cifgithub', 'desgithub'] , help='Si desea utilizar la tarea de cifrado/descifrado, es necesario especificiar el modo')
   parser.add_argument("-msj", metavar='MENSAJE', dest="mensaje", type=str, help='Se debe poner un mensaje el cual se quiera cifrar o descifrar.')
   parser.add_argument("-key", metavar='LLAVE', dest="llave", type=int, help='Se utiliza para saber a base de cual llave se cifra o descifra el mensaje')
@@ -24,6 +25,9 @@ if __name__ == "__main__":
   parser.add_argument("-asu", metavar='ASUNTO', dest="asunto", type=str, help='Se utiliza para poner el titulo que tendrá el correo.', default="Hola!")
   parser.add_argument("-ip", metavar='IP', dest="ip", type=str, help='Se debe introducir la ip a consultar, solo el ID de red.', deafult="172.217.15.")
   parser.add_argument("-ports", metavar='PUERTOS', dest="puertos", help='Introduce los puertos a revisar separados por una coma [80, 800]', deafult= "80, 800")
+  parser.add_argument("-a", metavar='ARCHIVO', dest="archivo", choices=['imagen', 'imagenes', 'pdf', 'pdfs', 'word', 'words', 'mp3', 'mp3s'] , help='Si desea utilizar la tarea de sacar la metadata, es necesario especificiar el tipo de archivo')
+  parser.add_argument("-pa", metavar= 'PATH', dest="path", type=str, help='Path donde se encuentran los archivos para sacar su metadata.')
+  parser.add_argument("-mp", metavar= 'METAPATH', dest="metapath", type=str, help='Ruta donde se guardarán los metadatas encontrados.')
   params = parser.parse_args()
 try: 
     tarea = (params.tarea)
@@ -79,22 +83,48 @@ elif tarea == 'dns':
 	    print(e)
 elif tarea == 'puertos':
     try:
-            ip = (params.ip)
-	    print("Trabajaremos con la ip: " + ip)
-		      
-            portlist = params.ports.split(',')
-            for i in range (len(portlist)):
-                print("Puerto: " + portlist[i])
-		portlist[i] = int(portlist[i])
-	    print("Trabajaremos con la ip: " + dominio)
-	
-	    socketpuertos.checoPuertos(ip, portlist)
-		
+        ip = (params.ip)
+        print("Trabajaremos con la ip: " + ip)
+        portlist = params.ports.split(',')
+        for i in range (len(portlist)):
+            print("Puerto: " + portlist[i])
+            portlist[i] = int(portlist[i])
+        print("Trabajaremos con la ip: " + dominio)
+        socketpuertos.checoPuertos(ip, portlist)
+elif tarea == 'metadata':
+    try:
+        archivo = (params.archivo)
+        if (archivo == 'imagen') or (archivo == 'imagenes'):
+            path = (params.path)
+            metapath = (params.metapath)
+            if archivo == 'imagen':
+                MetaDataPIA.printOneMetaImg(path, metapath)
+            else:
+                MetaDataPIA.printAllMetaImg(path, metapath)
+        elif (archivo == 'pdf') or (archivo == 'pdfs'):
+            path = (params.path)
+            metapath = (params.metapath)
+            if archivo == 'pdf':
+                MetaDataPIA.printOneMetaPDf(path, metapath)
+            else:
+                MetaDataPIA.printAllMetaPDf(path, metapath)
+        elif (archivo == 'word') or (archivo == 'words'):
+            path = (params.path)
+            metapath = (params.metapath)
+            if archivo == 'pdf':
+                MetaDataPIA.printOneMetaDocx(path, metapath)
+            else:
+                MetaDataPIA.printAllMetaDocx(path, metapath)
+        else:
+            path = (params.path)
+            metapath = (params.metapath)
+            if archivo == 'mp3':
+                MetaDataPIA.printOneMetaMp3(path, metapath)
+            else:
+                MetaDataPIA.printAllMetaMp3(path, metapath)
     except Exception as e:
+        print(e)
+        exit
+except Exception as e:
 	print(e)
 	exit()
-	
-	
-	
-	
-	
