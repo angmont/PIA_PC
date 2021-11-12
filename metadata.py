@@ -52,17 +52,17 @@ def printOneMetaImg(image_path, MetaPath):
         logging.info("Entramos en la funcion con los valores: ")
         logging.info(image_path)
         logging.info(MetaPath)
-	name = os.path.basename(image_path)
-	fo = open(MetaPath + "\\" + name +".txt","w")
+        name = os.path.basename(image_path)
+        fo = open(MetaPath + "\\" + name +".txt","w")
         logging.info("abrimos: ")
         logging.info(MetaPath + "\\" + name +".txt")
-	print ("[+] Metadata for file: %s " %(name))
-	try:
+        print ("[+] Metadata for file: %s " %(name))
+        try:
                 logging.info("Entramos a la funcion get_exif_metadata con un valor de: " + image_path)
-		exif = get_exif_metadata(image_path)
+                exif = get_exif_metadata(image_path)
                 logging.info("Escribimos la metadata")
-		for metadata in exif:
-			fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
+                for metadata in exif:
+                    fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
 	except:
 		import sys, traceback
                 logging.error("No metadata encontrada")
