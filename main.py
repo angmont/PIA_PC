@@ -100,7 +100,7 @@ try:
             print()
             script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe','-ExecutionPolicy', 'Unrestricted', './dns.ps1'], cwd=os.getcwd())
     
-	    script_p.wait()
+            script_p.wait()
 
     elif tarea == 'metadata':
 
