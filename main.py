@@ -1,8 +1,8 @@
 import subprocess
 import cifrado
-import Correos_Modulo
-import socketpuertos
-import MetaDataPIA
+import enviocorreos
+import puertos
+import metadata
 import webscraping
 import argparse
 import os, time
@@ -13,7 +13,7 @@ logging.basicConfig(filename='app.log', level=logging.INFO)
 if __name__ == "__main__":
   description= ("Este script realiza una gran diversa cantidad de tareas " +
   "las cuales son las siguientes: realizar cifrados, obtener metadata, " +
-  "escaneo de puertos, envio de correos y ")
+  "escaneo de puertos, envio de correos y webscraping")
   parser = argparse.ArgumentParser(description="PIA", epilog=description, formatter_class=argparse.RawDescriptionHelpFormatter)
   parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns', 'puertos', 'metadata', 'web', 'hash'] , help='Se elige la tarea a realizar', required=True)
   parser.add_argument("-m", metavar='MODO', dest="modo", 
@@ -75,12 +75,12 @@ try:
         asunto = (params.asunto)
         orga = (params.dominio)
 
-        datos_encontrados = Correos_Modulo.Busqueda(orga)
+        datos_encontrados = enviocorreos.Busqueda(orga)
         if datos_encontrados is None:
             print("No se encontró nada")
             exit()
         else:
-            Correos_Modulo.GuardarInformacion(datos_encontrados, orga, remitente, destinatario, asunto, mensaje)
+            enviocorreos.GuardarInformacion(datos_encontrados, orga, remitente, destinatario, asunto, mensaje)
 
     elif tarea == 'dns':  
 
@@ -97,30 +97,30 @@ try:
             ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'imagen':
-                MetaDataPIA.printOneMetaImg(ruta, metapath)
+                metadata.printOneMetaImg(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaImg(ruta, metapath)
+                metadata.printAllMetaImg(ruta, metapath)
         elif (archivo == 'pdf') or (archivo == 'pdfs'):
             ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'pdf':
-                MetaDataPIA.printOneMetaPDf(ruta, metapath)
+                metadata.printOneMetaPDf(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaPDf(ruta, metapath)
+                metadata.printAllMetaPDf(ruta, metapath)
         elif (archivo == 'word') or (archivo == 'words'):
             ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'word':
-                MetaDataPIA.printOneMetaDocx(ruta, metapath)
+                metadata.printOneMetaDocx(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaDocx(ruta, metapath)
+                metadata.printAllMetaDocx(ruta, metapath)
         else:
             ruta = (params.ruta)
             metapath = (params.metapath)
             if archivo == 'mp3':
-                MetaDataPIA.printOneMetaMp3(ruta, metapath)
+                metadata.printOneMetaMp3(ruta, metapath)
             else:
-                MetaDataPIA.printAllMetaMp3(ruta, metapath)
+                metadata.printAllMetaMp3(ruta, metapath)
 
     elif tarea == 'puertos':	
 
@@ -137,7 +137,7 @@ try:
         print("Con los puertos: " + portlist[i])
         portlist[i] = int(portlist[i])
 		
-      socketpuertos.checoPuertos(ip, portlist, puertoss)
+      puertos.checoPuertos(ip, portlist, puertoss)
 
 
     elif tarea == 'web':
