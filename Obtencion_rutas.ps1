@@ -14,7 +14,7 @@ switch($op){
         $num = 'md5'
     }2{
         $num = 'sha512'
-        }
+        
     }3{
         $num = 'sha256'
 
