@@ -66,7 +66,7 @@ pip install -r requirements.txt
 ## Aclaraciones
 _Argumentos para cada tarea_
 
-Nota: la información de cada argumento se encuentra en:
+**Nota**: la información de cada argumento se encuentra en:
 ```
 py main.py -h
 ```
