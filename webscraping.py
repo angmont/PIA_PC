@@ -20,7 +20,7 @@ def busqueda_google(busqueda):
 
 
 def download_images(url):
-    loggin.info("Entra a la función downloads_images" )
+    logging.info("Entra a la función downloads_images" )
     r = requests.get(url) 
     soup = BeautifulSoup(r.text, 'html.parser') 
     images = soup.findAll('img') 
