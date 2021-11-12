@@ -176,8 +176,6 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 * **E-mmanuel Manzanarez** - [EmanuelManzanarez](https://github.com/EmanuelManzanarez)
 * **Emiliano Leal** - [DariHT8](https://github.com/DariHT8)
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia MIT Lincense - mira el archivo [LICENSE](LICENSE) para detalles
