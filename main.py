@@ -1,5 +1,5 @@
 import subprocess
-import NoPrincipal
+import cifrado
 import Correos_Modulo
 import socketpuertos
 import MetaDataPIA
@@ -51,19 +51,19 @@ try:
         if (modo == 'cifmensaje') or (modo == 'desmensaje'):
             mensaje = (params.mensaje)
             if modo == 'cifmensaje':
-                print(NoPrincipal.cifrar_mensaje(mensaje, llave))
+                print(cifrado.cifrar_mensaje(mensaje, llave))
             else:
-                print(NoPrincipal.descifrar_mensaje(mensaje, llave))
+                print(cifrado.descifrar_mensaje(mensaje, llave))
 
         elif modo == 'cifgithub':
             usuario = (params.usuario)
-            NoPrincipal.cifrar_github(usuario, llave)
+            cifrado.cifrar_github(usuario, llave)
         elif modo == 'destxt':
             ruta = (params.ruta)
-            NoPrincipal.descifrar_txt(ruta, llave)
+            cifrado.descifrar_txt(ruta, llave)
         elif modo == 'ciftxt':
             ruta = params.ruta
-            NoPrincipal.cifrar_txt(ruta, llave)
+            cifrado.cifrar_txt(ruta, llave)
         else:
             print('Opción no válida para cifrado')
 
@@ -86,7 +86,7 @@ try:
 
 	    print()
 	    script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
-                            '-ExecutionPolicy', 'Unrestricted', './DNS.ps1'], cwd=os.getcwd())
+                            '-ExecutionPolicy', 'Unrestricted', './dns.ps1'], cwd=os.getcwd())
     
 	    script_p.wait()
 
