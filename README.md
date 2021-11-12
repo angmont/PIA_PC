@@ -65,8 +65,40 @@ _Y repite_
 ```
 hasta finalizar
 ```
+## Aclaraciones
+_Argumentos para cada tarea_
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+Cifrar
+-m (cifgithub / cifmensaje / destxt / ciftxt / desmensaje)
+-msj Necesario para la funcion (cifmensaje / desmensaje)
+-key Necesario para todos
+-user Necesario para la funcion cifgithub
+-ru Necesario para (ciftxt / destxt)
+
+Envio de correos
+-rem
+-des
+-url
+-cont
+-asu
+_Todos son necesarios para la tarea_
+
+Puertos
+-ip
+-ports
+_Todos son necesarios para la tarea_
+
+Metadata
+-a (imagen / imagenes / pdf / pdfs / word / words / mp3 / mp3s)
+-mp 
+-ru
+_Todos son necesarios para la tarea_
+
+Web Scraping
+-m (busqueda / emails / pdf / img)
+-url Necesario para (emails / pdf / img)
+-bus Necesario para busqueda
+
 
 ## Ejecutando el programa ⚙️
 
@@ -76,7 +108,10 @@ py main.py -t dns
 ```
 _Ya de ahí, se puede ir elegiendo cualquiera de las tareas previamente mencionadas:_
 
-
+Formatos para las funciones
+```
+py main.py -t cifrar -m 
+```
 ### Analice las pruebas end-to-end 🔩
 
 _Explica que verifican estas pruebas y por qué_
