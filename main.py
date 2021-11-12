@@ -161,7 +161,7 @@ try:
             logging.info(busqueda)
             webscraping.busqueda_google(busqueda)
         else:
-            logging.info("Ninguna opción es valida para hacer \"Web Scrapping\" )
+            logging.info("Ninguna opción es valida para hacer Web Scrapping" )
             print('Opcion no válida para web scraping')
 except Exception as e:
     logging.error("Ha ocurrido un error: " + str(e))

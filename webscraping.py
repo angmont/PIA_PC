@@ -7,7 +7,7 @@ import logging
 
 # esta variable contiene el paramentro o consulta de busqueda
 def busqueda_google(busqueda):
-    logging.info("Entro en la función \"busqueda_google\" )
+    logging.info("Entro en la función busqueda_google" )
     # ahora ejecutamos la busqueda con la funcion search y pasamos como parametro la consulta
     logging.info("Los resultados son: ")
     results = search(busqueda)
@@ -20,7 +20,7 @@ def busqueda_google(busqueda):
 
 
 def download_images(url):
-    loggin.info("Entra a la función \"downloads_images\" )
+    loggin.info("Entra a la función downloads_images" )
     r = requests.get(url) 
     soup = BeautifulSoup(r.text, 'html.parser') 
     images = soup.findAll('img') 
@@ -82,7 +82,7 @@ def download_images(url):
 
 
 def descargar_pdfs(url):
-    logging.info(Entra en la función \"descargar_pdfs\" )
+    logging.info("Entra en la función descargar_pdfs" )
     response = requests.get(url)   
 
     soup = BeautifulSoup(response.text, 'html.parser') 
@@ -95,7 +95,7 @@ def descargar_pdfs(url):
         if ('.pdf' in link.get('href', [])): 
             i += 1
             print("Downloading file: ", i, "...")
-            logging.info("Descargando archivo:, i, "...")
+            logging.info("Descargando archivo:", i, "...")
       
             
             response = requests.get(link.get('href')) 
@@ -112,7 +112,7 @@ def descargar_pdfs(url):
 
 
 def find_mails(url):
-    logging.info(Entra en la función \"find_emails\" )
+    logging.info("Entra en la función find_emails" )
     response = requests.get(url)
     logging.info("Busca la pagina: " + url)
     if response.status_code != 200:
