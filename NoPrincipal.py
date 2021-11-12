@@ -75,7 +75,7 @@ def cifrar_github(usuario, clave):
   except Exception as e:
     print(e)
 
-def descifrar_github(path, clave):
+def descifrar_txt(path, clave):
 
   nom = path.split('/')
   nombre = nom[len(nom)-1]
