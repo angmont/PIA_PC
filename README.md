@@ -68,9 +68,18 @@ hasta finalizar
 
 _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
-## Ejecutando las pruebas ⚙️
+## Ejecutando el programa ⚙️
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+_Primeramente, es necesario aclarar la tarea a usar con el argumento "-t"_
+```
+py main.py -t dns
+```
+_Ya de ahí, se puede ir elegiendo cualquiera de las siguientes tareas:
+*cifrado
+*envio de correos
+*web scraping
+*obtener metadata
+*escaneo de puertos
 
 ### Analice las pruebas end-to-end 🔩
 
