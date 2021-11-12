@@ -61,11 +61,9 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [Python](https://www.python.org/) - Lenguaje de programación
+* [Powershell](https://docs.microsoft.com/en-us/powershell/?view=powershell-7.2) - Automatizador de tareas multiplataforma
 
 ## Contribuyendo 🖇️
 
