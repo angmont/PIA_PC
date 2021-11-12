@@ -6,8 +6,7 @@ import MetaDataPIA
 import webscraping
 import argparse
 import os, time
-import logging
-import log
+import logging as log
 
 logging.basicConfig(filename='app.log', level=logging.INFO)
 
