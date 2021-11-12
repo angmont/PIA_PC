@@ -122,7 +122,8 @@ def find_mails(url):
     regExMail = r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+"
 
     new_emails = set(re.findall(regExMail, response.text, re.I))
-    logging.info("emails encontrados: " + new_emails)
+    logging.info("emails encontrados: ")
+    logging.info(new_emails)
 
     name = input("Ingresa el nombre del archivo (sin el .txt): ")
     logging.info("El nombre del archivo será: " + name)
