@@ -15,7 +15,7 @@ if __name__ == "__main__":
   "las cuales son las siguientes: realizar cifrados, obtener metadata, " +
   "escaneo de puertos, envio de correos y ")
   parser = argparse.ArgumentParser(description="PIA", epilog=description, formatter_class=argparse.RawDescriptionHelpFormatter)
-  parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns', 'puertos', 'metadata', 'web'] , help='Se elige la tarea a realizar', required=True)
+  parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns', 'puertos', 'metadata', 'web', 'hash'] , help='Se elige la tarea a realizar', required=True)
   parser.add_argument("-m", metavar='MODO', dest="modo", 
   choices=['cifmensaje', 'desmensaje', 'cifgithub', 'destxt', 'ciftxt', 'busqueda', 'emails', 'pdf', 'img'] , help='Si desea utilizar la tarea de cifrado o de web scraping, es necesario especificiar el modo')
   parser.add_argument("-msj", metavar='MENSAJE', dest="mensaje", type=str, help='Se debe poner un mensaje el cual se quiera cifrar o descifrar.')
@@ -166,6 +166,13 @@ try:
         else:
             logging.info("Ninguna opción es valida para hacer Web Scrapping" )
             print('Opcion no válida para web scraping')
+    else:
+
+	    print()
+	    script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
+                            '-ExecutionPolicy', 'Unrestricted', './Obtencion_rutas.ps1'], cwd=os.getcwd())
+    
+	    script_p.wait()       
 except Exception as e:
     logging.error("Ha ocurrido un error: " + str(e))
     print(e)
