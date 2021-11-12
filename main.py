@@ -46,9 +46,9 @@ try:
     if tarea == 'cifrar':
 
         modo = (params.modo)
-	logging.info("El modo es: " + modo)
+        logging.info("El modo es: " + modo)
         llave = (params.llave)
-	logging.info("La llave es: " + llave)
+        logging.info("La llave es: " + llave)
 
         if (modo == 'cifmensaje') or (modo == 'desmensaje'):
             mensaje = (params.mensaje)
@@ -77,15 +77,15 @@ try:
     elif tarea == 'correos':
 
         remitente = (params.remitente)
-	logging.info("El remitente es: " + remitente)
+        logging.info("El remitente es: " + remitente)
         destinatario = (params.destinatario)
-	logging.info("El destinatario es: " + destinatario)
+        logging.info("El destinatario es: " + destinatario)
         mensaje = (params.contenido)
-	logging.info("El mensaje es: " + mensaje)
+        logging.info("El mensaje es: " + mensaje)
         asunto = (params.asunto)
-	logging.info("El asunto es: " + asunto)
+        logging.info("El asunto es: " + asunto)
         orga = (params.dominio)
-	logging.info(La organizacion es: " + orga)
+        logging.info(La organizacion es: " + orga)
 
         datos_encontrados = enviocorreos.Busqueda(orga)
         if datos_encontrados is None:
