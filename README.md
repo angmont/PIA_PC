@@ -144,23 +144,18 @@ py main.py -t cifrar -m ciftxt -ru C:\User\user\Path -key 3
 py main.py -t web -m busqueda -bus chips
 ```
 ```
-py main.py -t metadata -m ru C:\Users\user\Path\hacia\archivo -mp C:\Users\user\Path\a\guardar
+py main.py -t metadata -a imagen -ru C:\Users\user\Path\hacia\archivo -mp C:\Users\user\Path\a\guardar
 ```
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
 ```
-Da un ejemplo
+py main.py -t correos -rem tucorreo@microsoft.com -des sucorreo@(gmail/hotmail/outlook).com -url uanl.mx -cont "Hola a Todos" -asu "Ejemplo"
+```
+```
+py main.py -t puertos -ip 111.111.111.11 -ports 80,50
+```
+```
+py main.py -t hash
 ```
 
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 
 ## Despliegue 📦
 
@@ -176,9 +171,6 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
 
 ## Versionado 📌
 
