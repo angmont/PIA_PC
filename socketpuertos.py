@@ -1,5 +1,6 @@
 import socket
 import sys
+import logging
 
 def checoPuertos(ip, portlist, puertoss):
   print("Empieza el escaneo de la ip: " + ip + " Con los puertos: " + puertoss)
