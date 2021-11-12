@@ -40,7 +40,7 @@ def printAllMetaImg(path, MetaPath):
                                 exif = get_exif_metadata(name)
                                 logging.info("Escribimos la metadata")
                                 for metadata in exif:
-                                fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
+				fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
         		except:
                                 import sys, traceback
                                 logging.error("No metadata encontrada")
