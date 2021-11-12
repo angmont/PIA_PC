@@ -1,8 +1,6 @@
 # PIA_PC
-Documentos del pia
-# Título del Proyecto
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_Documentación para el PIA de Programación en ciberseguridad_
 
 ## Comenzando 🚀
 
