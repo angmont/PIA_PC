@@ -44,7 +44,7 @@ def descifrar_mensaje(mensaje, key):
 
  return(translated)
 
-def cifrar_github(usuario, clave, nombre):
+def cifrar_github(usuario, clave):
   i = 0
   try:
     urlrepos = "https://api.github.com/users/" + usuario + "/repos"
@@ -74,7 +74,7 @@ def cifrar_github(usuario, clave, nombre):
   except Exception as e:
     print(e)
 
-def descifrar_github(path, clave, nombre):
+def descifrar_github(path, clave):
 
   lectura = open(path, "r")
   escritura = open(nombre + ".txt", "a")
@@ -85,7 +85,7 @@ def descifrar_github(path, clave, nombre):
   escritura.close()
   lectura.close()
 
-def cifrar_txt(path, clave, nombre):
+def cifrar_txt(path, clave):
 
   lectura = open(path, "r")
   escritura = open(nombre + ".txt", "a")
