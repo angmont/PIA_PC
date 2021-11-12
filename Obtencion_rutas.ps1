@@ -6,7 +6,7 @@ $rutas = $archivos.Fullname
 
 foreach ($file in $rutas){
     $name = Split-Path $file -leaf
-    python $script $file $name
+    python Hashes.py $file $name
     #Write-Host $file
     }
 
