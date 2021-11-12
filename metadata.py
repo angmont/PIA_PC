@@ -9,6 +9,7 @@ import argparse
 from PyPDF2 import PdfFileReader
 import docx
 import eyed3
+import logging
 
 #Extraer todos los MetaDatos de una ruta
 def get_exif_metadata(image_path):
@@ -19,9 +20,13 @@ def get_exif_metadata(image_path):
         if exifinfo is not None:
             for tag, value in exifinfo.items():
                 decoded = TAGS.get(tag, tag)
+		logging.info("El tag es: " + decoded)
                 ret[decoded] = value
     return ret  
 def printAllMetaImg(path, MetaPath):
+    logging.info("Entramos en la función con los valores: ")
+    logging.info(path)
+    logging,info(MetaPath)
     os.chdir(path)
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
@@ -29,27 +34,40 @@ def printAllMetaImg(path, MetaPath):
         		splitName = name.split(".",1)
         		oname =splitName[0]
         		fo = open(MetaPath + "\\" + name + "_Metadata.txt","w")
+                        logging.info("Abrimos")
+			logging.info(MetaPath + "\\" + name + "_Metadata.txt")
         		print ("[+] Metadata for file: %s " %(name))
         		try:
+				logging.info("Entramos a la funcion get_exif_metadata con un valor de: " + name)
         			exif = get_exif_metadata(name)
+				logging.info("Escribimos la metadata")
         			for metadata in exif:
         				fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
         		except:
-        			import sys, traceback              
+        			import sys, traceback
+				logging.error("No metadata encontrada")
         			fo.write("No Medata were founded")
         			#traceback.print_exc(file=sys.stdout)
     fo.close()
 
 def printOneMetaImg(image_path, MetaPath):
+	logging.info("Entramos en la funcion con los valores: ")
+	logging.info(image_path)
+	logging.info(MetaPath)
 	name = os.path.basename(image_path)
 	fo = open(MetaPath + "\\" + name +".txt","w")
+	logging.info("abrimos: ")
+	logging.info(MetaPath + "\\" + name +".txt")
 	print ("[+] Metadata for file: %s " %(name))
 	try:
+		logging.info("Entramos a la funcion get_exif_metadata con un valor de: " + image_path)
 		exif = get_exif_metadata(image_path)
+		logging.info("Escribimos la metadata")
 		for metadata in exif:
 			fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
 	except:
-		import sys, traceback              
+		import sys, traceback
+		logging.error("No metadata encontrada")
 		fo.write("No Medata were founded")
         #traceback.print_exc(file=sys.stdout)
 	fo.close()
