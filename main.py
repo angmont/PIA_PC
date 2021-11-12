@@ -46,10 +46,13 @@ try:
     if tarea == 'cifrar':
 
         modo = (params.modo)
+	logging.info("El modo es: " + modo)
         llave = (params.llave)
+	logging.info("La llave es: " + llave)
 
         if (modo == 'cifmensaje') or (modo == 'desmensaje'):
             mensaje = (params.mensaje)
+            logging.info("El mensaje es: " + mensaje)
             if modo == 'cifmensaje':
                 print(cifrado.cifrar_mensaje(mensaje, llave))
             else:
@@ -57,33 +60,43 @@ try:
 
         elif modo == 'cifgithub':
             usuario = (params.usuario)
+            logging.info("El usuario es: " usuario)
             cifrado.cifrar_github(usuario, llave)
         elif modo == 'destxt':
             ruta = (params.ruta)
+            logging.info("Usaremos la ruta: " + ruta)
             cifrado.descifrar_txt(ruta, llave)
         elif modo == 'ciftxt':
             ruta = params.ruta
+            logging.info("Usaremos la ruta: " + ruta)
             cifrado.cifrar_txt(ruta, llave)
         else:
+            logging.error("Opcion no válida para cifrado")
             print('Opción no válida para cifrado')
 
     elif tarea == 'correos':
 
         remitente = (params.remitente)
+	logging.info("El remitente es: " + remitente)
         destinatario = (params.destinatario)
+	logging.info("El destinatario es: " + destinatario)
         mensaje = (params.contenido)
+	logging.info("El mensaje es: " + mensaje)
         asunto = (params.asunto)
+	logging.info("El asunto es: " + asunto)
         orga = (params.dominio)
+	logging.info(La organizacion es: " + orga)
 
         datos_encontrados = enviocorreos.Busqueda(orga)
         if datos_encontrados is None:
+            logging.info("No se encontró nada")
             print("No se encontró nada")
             exit()
         else:
             enviocorreos.GuardarInformacion(datos_encontrados, orga, remitente, destinatario, asunto, mensaje)
 
     elif tarea == 'dns':  
-
+            logging.info("Se inicia la tarea de dns")
 	    print()
 	    script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
                             '-ExecutionPolicy', 'Unrestricted', './dns.ps1'], cwd=os.getcwd())
@@ -92,34 +105,52 @@ try:
 
     elif tarea == 'metadata':
 
+        logging.info("Tipo de archivo:")
         archivo = (params.archivo)
+        logging.info(archivo)
         if (archivo == 'imagen') or (archivo == 'imagenes'):
             ruta = (params.ruta)
+            logging.info("En la ruta: " + ruta)
             metapath = (params.metapath)
+            logging.info("El metadata se guardará en la ruta: " + metapath)
             if archivo == 'imagen':
+                logging.info("Ingresamos a la función printOneMetaImg")
                 metadata.printOneMetaImg(ruta, metapath)
             else:
+                logging.info("Ingresamos a la función printAllMetaImg")
                 metadata.printAllMetaImg(ruta, metapath)
         elif (archivo == 'pdf') or (archivo == 'pdfs'):
             ruta = (params.ruta)
+            logging.info("Usaremos la ruta: " + ruta)
             metapath = (params.metapath)
+            logging.info("Guardaremos la metadata en: " + metapath)
             if archivo == 'pdf':
+                logging.info("Ingresamos a la función printOneMetaPDF")
                 metadata.printOneMetaPDf(ruta, metapath)
             else:
+                logging.info("Ingresamos a la función printAllMetaPDF")
                 metadata.printAllMetaPDf(ruta, metapath)
         elif (archivo == 'word') or (archivo == 'words'):
             ruta = (params.ruta)
+            logging.info("Usaremos la ruta: " + ruta)
             metapath = (params.metapath)
+            logging.info("Guardaremos la metadata en: " + metapath)
             if archivo == 'word':
+                logging.info("Ingresamos a la función printOneMetaDocx")
                 metadata.printOneMetaDocx(ruta, metapath)
             else:
+                logging.info("Ingresamos a la función printAllMetaDocx")
                 metadata.printAllMetaDocx(ruta, metapath)
         else:
             ruta = (params.ruta)
+            logging.info("Usaremos la ruta: " + ruta)
             metapath = (params.metapath)
+            logging.info("Guardaremos la metadata en: " + metapath)
             if archivo == 'mp3':
+                logging.info("Ingresamos a la función printOneMetaMp3)
                 metadata.printOneMetaMp3(ruta, metapath)
             else:
+                logging.info("Ingresamos a la función printAllMetaMp3")
                 metadata.printAllMetaMp3(ruta, metapath)
 
     elif tarea == 'puertos':	
