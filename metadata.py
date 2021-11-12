@@ -63,19 +63,19 @@ def printOneMetaImg(image_path, MetaPath):
                 logging.info("Escribimos la metadata")
                 for metadata in exif:
                     fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
-	except:
-		import sys, traceback
+        except:
+                import sys, traceback
                 logging.error("No metadata encontrada")
-		fo.write("No Medata were founded")
+                fo.write("No Medata were founded")
         #traceback.print_exc(file=sys.stdout)
-	fo.close()
+        fo.close()
 
 def printAllMetaPDf(path,MetaPath):
     logging.info("Entramos en la funcion")
     os.chdir(path)
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
-        	if name.lower().endswith(('.pdf')):
+                if name.lower().endswith(('.pdf')):
         		splitName = name.split(".",1)
         		oname =splitName[0]
         		fo = open(MetaPath + "\\" + oname +"_Metadata.txt","w")
