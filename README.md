@@ -1,52 +1,21 @@
 # PIA_PC
 
 _Documentación para el PIA de Programación en ciberseguridad_
+![alt text](https://www.mejorconweb.com/images/programacion-web-barcelona.jpg)
 
 ## Comenzando 🚀
 
-_Este programa esta hecho con el propósito de realizar tareas para ciberseguridad, tales como: escaneo de puertos, webscraping, envío de correos, cifrado y descifrado, sacar metadata de archivos, entre otros._
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
 
-_Se requiere tener instalado python en su versión de 3.9 y tambien los siguientes módulos de manera manual:_
+_Que cosas necesitas para instalar el software y como instalarlas_
 
 ```
-pip install python_docx
-```
-```
-pip install requests
-```
-```
-pip install pyhunter
-```
-```
-pip install openpyxl
-```
-```
-pip install tqdm
-```
-```
-pip install googlesearch_python
-```
-```
-pip install beautifulsoup4
-```
-```
-pip install eyed3
-```
-```
-pip install Pillow
-```
-```
-pip install PyPDF2
-```
-
-_O simplemente se puede clonar éste repositorio y realizar:_
-```
-pip install -r requirements.txt 
+Da un ejemplo
 ```
 
 ### Instalación 🔧
@@ -93,11 +62,9 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [Python](https://www.python.org/) - Lenguaje de programación
+* [Powershell](https://docs.microsoft.com/en-us/powershell/?view=powershell-7.2) - Automatizador de tareas multiplataforma
 
 ## Contribuyendo 🖇️
 
