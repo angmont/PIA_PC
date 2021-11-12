@@ -86,7 +86,7 @@ try:
 
 	    print()
 	    script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
-                            '-ExecutionPolicy', 'Unrestricted', './dns.ps1'], cwd=os.getcwd())
+                            '-ExecutionPolicy', 'Unrestricted', './consulta_dns.ps1'], cwd=os.getcwd())
     
 	    script_p.wait()
 
@@ -170,7 +170,7 @@ try:
 
 	    print()
 	    script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
-                            '-ExecutionPolicy', 'Unrestricted', './Obtencion_rutas.ps1'], cwd=os.getcwd())
+                            '-ExecutionPolicy', 'Unrestricted', './rutas.ps1'], cwd=os.getcwd())
     
 	    script_p.wait()       
 except Exception as e:
