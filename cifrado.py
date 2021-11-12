@@ -1,8 +1,11 @@
 import requests
+import logging
 
 def cifrar_mensaje(mensaje, key):
   universo = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
-
+  logging.info("Nuestro universo es: " + universo)
+  logging.info("Cifrando mensaje...")
+  
   translated = ''
 
   for symbol in mensaje:
@@ -20,10 +23,13 @@ def cifrar_mensaje(mensaje, key):
         translated = translated + symbol
 
   return(translated)
+  logging.info(translated)
 
 
 def descifrar_mensaje(mensaje, key):
  universo = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
+ logging.info("Nuestro universo es: " + universo)
+ logging.info("Descifrando mensaje...")
 
  translated = ''
 
@@ -43,8 +49,10 @@ def descifrar_mensaje(mensaje, key):
         translated = translated + symbol
 
  return(translated)
+ logging.info(translated)
 
 def cifrar_github(usuario, clave):
+  logging.info("Estamos en cifrar_github")
   i = 0
   try:
     urlrepos = "https://api.github.com/users/" + usuario + "/repos"
@@ -71,12 +79,15 @@ def cifrar_github(usuario, clave):
         escritura.write(msj2)
       escritura.write("\n\n")
     print('Hecho!')
+    logging.info("Hecho!")
     escritura.close()
   except Exception as e:
+    logging.error(str(e))
     print(e)
 
 def descifrar_txt(path, clave):
 
+  logging.info("Descifrando un txt")
   nom = path.split('/')
   nomb = nom[len(nom)-1]
   nombr = path.split('.txt')
@@ -86,12 +97,15 @@ def descifrar_txt(path, clave):
   for linea in lectura:
     mensaje = descifrar_mensaje(linea, clave)
     escritura.write(mensaje)
+    logging.info(mensaje)
   print("Hecho!")
+  logging.info("Hecho!")
   escritura.close()
   lectura.close()
 
 def cifrar_txt(path, clave):
 
+  logging.info("Cifrando un txt")
   lectura = open(path, "r")
   nom = path.split('/')
   nomb = nom[len(nom)-1]
@@ -100,7 +114,9 @@ def cifrar_txt(path, clave):
   escritura = open(nombre + "_cifrado.txt", "a")
   for linea in lectura:
     mensaje = cifrar_mensaje(linea, clave)
+    logging.info(mensaje)
     escritura.write(mensaje)
   print("Hecho!")
+  logging.info("Hecho!")
   escritura.close()
   lectura.close()
