@@ -39,11 +39,7 @@ def printAllMetaImg(path, MetaPath):
         			fo.write("No Medata were founded")
         			#traceback.print_exc(file=sys.stdout)
     fo.close()
-"""
-path = input("Ingresa la ruta de la carpeta estan almacenadas las imagenes: ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printAllMetaImg(path,MetaPath)
-"""
+
 def printOneMetaImg(image_path, MetaPath):
 	name = os.path.basename(image_path)
 	fo = open(MetaPath + "\\" + name +".txt","w")
@@ -57,11 +53,7 @@ def printOneMetaImg(image_path, MetaPath):
 		fo.write("No Medata were founded")
         #traceback.print_exc(file=sys.stdout)
 	fo.close()
-"""
-image_path = input("Ingresa la ruta de la imagen: ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printOneMetaImg(path,MetaPath)
-"""
+
 def printAllMetaPDf(path,MetaPath):
     os.chdir(path)
     for root, dirs, files in os.walk(".", topdown=False):
@@ -88,11 +80,7 @@ def printAllMetaPDf(path,MetaPath):
         	fo.write((str(info.title)) + '\n')
         	fo.close()
         	print("Los Metadatos del archivo "+ name +" si es que existen se han generado en un txt.")
-"""
-path = input("Ingresa la ruta de la carpeta donde estan almacenadas los pdf ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printAllMetaPDf(path,MetaPath)
-"""
+
 def printOneMetaPDf(pdf_path,MetaPath):
 	name = os.path.basename(pdf_path)
 	with open(pdf_path, 'rb') as f:
@@ -116,11 +104,7 @@ def printOneMetaPDf(pdf_path,MetaPath):
 	fo.write((str(info.title)) + '\n')
 	fo.close()
 	print("Los Metadatos del archivo " + name + " si es que existen se han generado en un txt.")
-"""
-pdf_path = input("Ingresa la ruta del pdf ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printOneMetaPDf(pdf_path,MetaPath)
-"""
+
 def printOneMetaDocx(doxc_path, MetaPath):
 	doc = docx.Document(doxc_path)
 	prop = doc.core_properties
@@ -140,11 +124,7 @@ def printOneMetaDocx(doxc_path, MetaPath):
 	fo.write("version: " + (str(prop.version)+ '\n'))
 	fo.close()
 	print("El archivo con los MetaDatos a sido creado de manera exitosa")
-"""
-doxc_path = input("Ingresa la ruta del archivo word: ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printOneMetaDocx(doxc_path,MetaPath)
-"""
+
 def printAllMetaDocx(path,MetaPath):
 	os.chdir(path)
 	for root, dirs, files in os.walk(".", topdown=False):
@@ -167,11 +147,7 @@ def printAllMetaDocx(path,MetaPath):
 				fo.write("version: " + (str(prop.version)+ '\n'))
 				fo.close()
 				print("El archivo con los MetaDatos a sido creado de manera exitosa")
-"""
-path = input("Ingresa la ruta de la carpeta con los archivos de word: ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printAllMetaDocx(path,MetaPath)
-"""
+
 def printOneMetaMp3(mp3_path, MetaPath):
 	name = os.path.basename(mp3_path)
 	splitName = name.split(".",1)
@@ -185,11 +161,7 @@ def printOneMetaMp3(mp3_path, MetaPath):
 	fo.write("publisher: " + str(audio.tag.publisher) + '\n')
 	fo.write("genre name: " + str(audio.tag.genre.name) + '\n')
 	fo.close()
-"""
-mp3_path = input("Ingresa la ruta del archivo mp3: ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printOneMetaMp3(mp3_path,MetaPath)
-"""
+
 def printAllMetaMp3(path, MetaPath):
 	os.chdir(path)
 	for root, dirs, files in os.walk(".", topdown=False):
@@ -205,8 +177,3 @@ def printAllMetaMp3(path, MetaPath):
 				fo.write("composer: " + str(audio.tag.composer) + '\n')
 				fo.write("publisher: " + str(audio.tag.publisher) + '\n')
 				fo.close()
-"""
-path = input("Ingresa la ruta de la carpeta donde estan los mp3: ")
-MetaPath = input("Ingresa la ruta para guardar los Metadatos: ")
-printAllMetaMp3(path,MetaPath)
-"""
