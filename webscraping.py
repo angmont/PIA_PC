@@ -129,7 +129,7 @@ def find_mails(url):
     fo = open(name + ".txt", "w")
     logging.info("Abre el archivo: " + name + ".txt")
     for i in new_emails:
-        c += 1
+        #c += 1
         fo.write(i)
         logging.info("Escribiendo el email... " + i + " en: " + name + ".txt")
         fo.write("\n")
