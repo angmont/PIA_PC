@@ -48,6 +48,7 @@ def cifrar_github(usuario, clave):
   i = 0
   try:
     urlrepos = "https://api.github.com/users/" + usuario + "/repos"
+    nombre = usuario
     resp1 = requests.get(urlrepos)
     dic1 = (resp1.json())
     if len(dic1) == 0:
@@ -58,7 +59,7 @@ def cifrar_github(usuario, clave):
         return (dic1['message'])
     except:
       pass
-    escritura = open(nombre + ".txt", "a")
+    escritura = open(nombre + "_cifgithub.txt", "a")
     for element in dic1:
       i = i + 1
       adios =("Repositorio " + str(i) + "\n\n")
@@ -76,8 +77,10 @@ def cifrar_github(usuario, clave):
 
 def descifrar_github(path, clave):
 
+  nom = path.split('/')
+  nombre = nom[len(nom)-1]
   lectura = open(path, "r")
-  escritura = open(nombre + ".txt", "a")
+  escritura = open(nombre + "_descifrado.txt", "a")
   for linea in lectura:
     mensaje = descifrar_mensaje(linea, clave)
     escritura.write(mensaje)
@@ -88,7 +91,9 @@ def descifrar_github(path, clave):
 def cifrar_txt(path, clave):
 
   lectura = open(path, "r")
-  escritura = open(nombre + ".txt", "a")
+  nom = path.split('/')
+  nombre = nom[len(nom)-1]
+  escritura = open(nombre + "_cifrado.txt", "a")
   for linea in lectura:
     mensaje = cifrar_mensaje(linea, clave)
     escritura.write(mensaje)
