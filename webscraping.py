@@ -32,7 +32,6 @@ def download_images(url):
     except:
         logging.error("Ya existe esta carpeta")
         print("Ya existe esa carpeta!") 
-        folder_create()
     
     count = 0
     print(f"{len(images)} Imagenes encontradas!")
@@ -129,7 +128,6 @@ def find_mails(url):
     logging.info("El nombre del archivo será: " + name)
     fo = open(name + ".txt", "w")
     logging.info("Abre el archivo: " + name + ".txt")
-    c = 0
     for i in new_emails:
         c += 1
         fo.write(i)
