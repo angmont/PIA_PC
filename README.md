@@ -68,7 +68,7 @@ hasta finalizar
 ## Aclaraciones
 _Argumentos para cada tarea_
 
-Cifrar
+### Cifrar
 
 -m (cifgithub / cifmensaje / destxt / ciftxt / desmensaje)
 
@@ -80,21 +80,29 @@ Cifrar
 
 -ru Necesario para (ciftxt / destxt)
 
-Envio de correos
+### Envio de correos
 -rem
+
 -des
+
 -url
+
 -cont
+
 -asu
+
 _Todos son necesarios para la tarea_
 
-Puertos
+_Se debe tener en cuenta que el remitente debe ser un correo con cuenta de **Microsoft**_
+
+### Puertos
 -ip
+
 -ports
+
 _Todos son necesarios para la tarea_
 
-Metadata
-
+### Metadata
 -a (imagen / imagenes / pdf / pdfs / word / words / mp3 / mp3s)
 
 -mp 
@@ -103,7 +111,7 @@ Metadata
 
 _Todos son necesarios para la tarea_
 
-Web Scraping
+### Web Scraping
 
 -m (busqueda / emails / pdf / img)
 
@@ -160,14 +168,17 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](ht
 
 ## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+Usamos [Python](https://www.python.org/) para el versionado. Para la versión 3.9.
 
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
+* **Ángela Montoya** - [angmont](https://github.com/angmont)
+* **Dariela Hurtado** - [DariHT8](https://github.com/DariHT8)
+* **Ian Leija** - [ianisra](https://github.com/ianisra)
+* **E-mmanuel Manzanarez** - [EmanuelManzanarez](https://github.com/EmanuelManzanarez)
+* **Emiliano Leal** - [DariHT8](https://github.com/DariHT8)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
 
