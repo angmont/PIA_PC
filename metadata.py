@@ -76,27 +76,27 @@ def printAllMetaPDf(path,MetaPath):
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
                 if name.lower().endswith(('.pdf')):
-        		splitName = name.split(".",1)
-        		oname =splitName[0]
-        		fo = open(MetaPath + "\\" + oname +"_Metadata.txt","w")
-        		with open(name, 'rb') as f:
-        			file = PdfFileReader(f)
-        			info = file.getDocumentInfo()
-        			number_of_pages = file.getNumPages()       
+                        splitName = name.split(".",1)
+                        oname =splitName[0]
+                        fo = open(MetaPath + "\\" + oname +"_Metadata.txt","w")
+                        with open(name, 'rb') as f:
+                                file = PdfFileReader(f)
+                                info = file.getDocumentInfo()
+                                number_of_pages = file.getNumPages()       
         	fo.write("Numero de paginas: ")
-        	fo.write((str(number_of_pages)) + '\n')
-        	fo.write("Autor: ")
-        	fo.write((str(info.author)) + '\n')
-        	fo.write("Creador: ")
-        	fo.write((str(info.creator)) + '\n')
-        	fo.write("Productor: ")
-        	fo.write((str(info.producer)) + '\n')
-        	fo.write("Sujeto: ")
-        	fo.write((str(info.subject)) + '\n')
-        	fo.write("Titulo: ")
-        	fo.write((str(info.title)) + '\n')
-        	fo.close()
-        	print("Los Metadatos del archivo "+ name +" si es que existen se han generado en un txt.")
+                fo.write((str(number_of_pages)) + '\n')
+                fo.write("Autor: ")
+                fo.write((str(info.author)) + '\n')
+                fo.write("Creador: ")
+                fo.write((str(info.creator)) + '\n')
+                fo.write("Productor: ")
+                fo.write((str(info.producer)) + '\n')
+                fo.write("Sujeto: ")
+                fo.write((str(info.subject)) + '\n')
+                fo.write("Titulo: ")
+                fo.write((str(info.title)) + '\n')
+                fo.close()
+                print("Los Metadatos del archivo "+ name +" si es que existen se han generado en un txt.")
                 logging.info("Los metadatos del archivo "+ name +" si es que existen, se han generado en un txt.")
 
 def printOneMetaPDf(pdf_path,MetaPath):
