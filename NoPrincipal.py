@@ -78,7 +78,9 @@ def cifrar_github(usuario, clave):
 def descifrar_txt(path, clave):
 
   nom = path.split('/')
-  nombre = nom[len(nom)-1]
+  nomb = nom[len(nom)-1]
+  nombr = path.split('.txt')
+  nombre =  nombr[0]
   lectura = open(path, "r")
   escritura = open(nombre + "_descifrado.txt", "a")
   for linea in lectura:
@@ -92,7 +94,9 @@ def cifrar_txt(path, clave):
 
   lectura = open(path, "r")
   nom = path.split('/')
-  nombre = nom[len(nom)-1]
+  nomb = nom[len(nom)-1]
+  nombr = path.split('.txt')
+  nombre =  nombr[0]
   escritura = open(nombre + "_cifrado.txt", "a")
   for linea in lectura:
     mensaje = cifrar_mensaje(linea, clave)
