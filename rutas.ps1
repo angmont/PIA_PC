@@ -25,7 +25,7 @@ switch($op){
 }
 foreach ($file in $rutas){
     $name = Split-Path $file -leaf
-    python Hashes.py $file $name $num
+    python hashes.py $file $name $num
     #Write-Host $file
     }
 
