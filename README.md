@@ -69,10 +69,15 @@ hasta finalizar
 _Argumentos para cada tarea_
 
 Cifrar
+
 -m (cifgithub / cifmensaje / destxt / ciftxt / desmensaje)
+
 -msj Necesario para la funcion (cifmensaje / desmensaje)
+
 -key Necesario para todos
+
 -user Necesario para la funcion cifgithub
+
 -ru Necesario para (ciftxt / destxt)
 
 Envio de correos
