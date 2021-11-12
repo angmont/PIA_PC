@@ -1,6 +1,7 @@
 import smtplib
 import ssl
 import getpass
+import logging
 
 from pyhunter import PyHunter
 from openpyxl import Workbook
@@ -12,6 +13,7 @@ from email.mime.text import MIMEText
 def Busqueda(organizacion):
 
     apikey = getpass.getpass("Ingresa tu API key: ")
+    logging.info("Se agrego la API KEY")
     hunter = PyHunter(apikey)
     resultado = hunter.domain_search(company=organizacion, limit=1,
                                      emails_type='personal')
@@ -41,6 +43,7 @@ def GuardarInformacion(datosEncontrados, organizacion, remitente, destinatario, 
     hoja["F2"] = diccionarioEmail['first_name']
     hoja["G2"] = diccionarioEmail['last_name']
     archivo = "Hunter"+organizacion+".xlsx"
+    logging.info(archivo)
     libro.save(archivo)
 
 
@@ -74,14 +77,20 @@ def GuardarInformacion(datosEncontrados, organizacion, remitente, destinatario, 
     with smtplib.SMTP("smtp.office365.com", 587) as server:
         try:
             print("[+] Conectando con el Servidor de Correo.")
+            logging.info("Conectando con el servidor")
             print("[+] Iniciando Encriptación de Sesión.")
+            logging.info("Iniciando encriptación de sesion")
             server.starttls(context=context)
             print("[+] Iniciando Sesión en el Servidor de Correo.")
+            logging.info("Iniciando sesion")
             server.login(remitente, password)
             print("[+] Enviando Correo.")
+            logging.info("Enviando correo")
             server.sendmail(
             remitente, destinatario, email_msg.as_string()
             )
             print("[+] Correo Electrónico Enviado con Éxito a: %s" % (destinatario))
+            logging.info("Correo electronico enviado con exito")
         except:
             print("[-] Error al Enviar el Correo.")
+            logging.error("Error al enviar el correo.")
