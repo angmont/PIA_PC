@@ -60,7 +60,7 @@ try:
 
         elif modo == 'cifgithub':
             usuario = (params.usuario)
-            logging.info("El usuario es: " usuario)
+            logging.info("El usuario es: " + usuario)
             cifrado.cifrar_github(usuario, llave)
         elif modo == 'destxt':
             ruta = (params.ruta)
