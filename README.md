@@ -69,6 +69,12 @@ pip install -r requirements.txt
 ## Aclaraciones
 _Argumentos para cada tarea_
 
+Nota: la información de cada argumento se encuentra en:
+```
+py main.py -h
+```
+
+
 ### Cifrar
 
 -m (cifgithub / cifmensaje / destxt / ciftxt / desmensaje)
@@ -119,6 +125,7 @@ _Todos son necesarios para la tarea_
 -url Necesario para (emails / pdf / img)
 
 -bus Necesario para busqueda
+
 
 
 ## Ejecutando el programa ⚙️
