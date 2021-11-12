@@ -42,9 +42,9 @@ def printAllMetaImg(path, MetaPath):
                                 for metadata in exif:
                                 fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
         		except:
-        			import sys, traceback
+                                import sys, traceback
                                 logging.error("No metadata encontrada")
-        			fo.write("No Medata were founded")
+                                fo.write("No Medata were founded")
         			#traceback.print_exc(file=sys.stdout)
     fo.close()
 
