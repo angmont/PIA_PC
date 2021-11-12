@@ -85,7 +85,7 @@ try:
         asunto = (params.asunto)
         logging.info("El asunto es: " + asunto)
         orga = (params.dominio)
-        logging.info(La organizacion es: " + orga)
+        logging.info("La organizacion es: " + orga)
 
         datos_encontrados = enviocorreos.Busqueda(orga)
         if datos_encontrados is None:
