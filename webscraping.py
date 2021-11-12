@@ -12,8 +12,7 @@ def busqueda_google(busqueda):
     for ra in results:
         print(ra)
 
-busqueda = input("Ingresa la palabra que quiere buscar: ")      
-busqueda_google(busqueda)
+
 
 
 def download_images(url):  
@@ -68,8 +67,7 @@ def download_images(url):
         else: 
             print(f"Total {count} Images Downloaded Out of {len(images)}") 
 
-url = input("Ingresa URL para la Descarga de Imagenes!:- ")
-download_images(url)
+
 
 
 def descargar_pdfs(url):  
@@ -97,8 +95,7 @@ def descargar_pdfs(url):
       
     print("Todos los PDF descargados!")
 
-url = input("Ingrese la URL para la Descarga de PDFs: ")   
-descargar_pdfs(url)
+
 
 
 def find_mails(url):
@@ -119,5 +116,3 @@ def find_mails(url):
         fo.write(i)
         fo.write("\n")
 
-url = input("Ingrese la URL para obtener los Correos: ")
-find_mails(url)
