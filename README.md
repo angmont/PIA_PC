@@ -94,14 +94,21 @@ Puertos
 _Todos son necesarios para la tarea_
 
 Metadata
+
 -a (imagen / imagenes / pdf / pdfs / word / words / mp3 / mp3s)
+
 -mp 
+
 -ru
+
 _Todos son necesarios para la tarea_
 
 Web Scraping
+
 -m (busqueda / emails / pdf / img)
+
 -url Necesario para (emails / pdf / img)
+
 -bus Necesario para busqueda
 
 
