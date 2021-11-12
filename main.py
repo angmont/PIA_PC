@@ -159,7 +159,7 @@ try:
                 logging.info("Si el \"modo\" es: img")
                 webscraping.download_images(url)
         elif modo == 'busqueda':
-            logging.info("Se realizara una busqueda en:")
+            logging.info("Se buscará:")
             busqueda = params.busqueda
             logging.info(busqueda)
             webscraping.busqueda_google(busqueda)
