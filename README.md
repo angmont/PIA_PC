@@ -52,19 +52,18 @@ pip install -r requirements.txt
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
+_Escriba lo siguiente en su terminal_
 
 ```
-Da un ejemplo
+git clone https://github.com/angmont/PIA_PC.git
+```
+Se puede clonar desde windows con git bash o git desktop
+_Recuerde instalar los módulos_
+
+```
+pip install -r requirements.txt
 ```
 
-_Y repite_
-
-```
-hasta finalizar
-```
 ## Aclaraciones
 _Argumentos para cada tarea_
 
@@ -131,6 +130,12 @@ _Ya de ahí, se puede ir elegiendo cualquiera de las tareas previamente menciona
 Ejemplos para las otras funciones
 ```
 py main.py -t cifrar -m ciftxt -ru C:\User\user\Path -key 3
+```
+```
+py main.py -t web -m busqueda -bus chips
+```
+```
+py main.py -t metadata -m ru C:\Users\user\Path\hacia\archivo -mp C:\Users\user\Path\a\guardar
 ```
 ### Analice las pruebas end-to-end 🔩
 
