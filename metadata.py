@@ -20,7 +20,7 @@ def get_exif_metadata(image_path):
         if exifinfo is not None:
             for tag, value in exifinfo.items():
                 decoded = TAGS.get(tag, tag)
-		logging.info("El tag es: " + decoded)
+                logging.info("El tag es: " + decoded)
                 ret[decoded] = value
     return ret  
 def printAllMetaImg(path, MetaPath):
@@ -35,44 +35,45 @@ def printAllMetaImg(path, MetaPath):
         		oname =splitName[0]
         		fo = open(MetaPath + "\\" + name + "_Metadata.txt","w")
                         logging.info("Abrimos")
-			logging.info(MetaPath + "\\" + name + "_Metadata.txt")
+                        logging.info(MetaPath + "\\" + name + "_Metadata.txt")
         		print ("[+] Metadata for file: %s " %(name))
         		try:
-				logging.info("Entramos a la funcion get_exif_metadata con un valor de: " + name)
+                                logging.info("Entramos a la funcion get_exif_metadata con un valor de: " + name)
         			exif = get_exif_metadata(name)
-				logging.info("Escribimos la metadata")
+                                logging.info("Escribimos la metadata")
         			for metadata in exif:
         				fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
         		except:
         			import sys, traceback
-				logging.error("No metadata encontrada")
+                                logging.error("No metadata encontrada")
         			fo.write("No Medata were founded")
         			#traceback.print_exc(file=sys.stdout)
     fo.close()
 
 def printOneMetaImg(image_path, MetaPath):
-	logging.info("Entramos en la funcion con los valores: ")
-	logging.info(image_path)
-	logging.info(MetaPath)
+        logging.info("Entramos en la funcion con los valores: ")
+        logging.info(image_path)
+        logging.info(MetaPath)
 	name = os.path.basename(image_path)
 	fo = open(MetaPath + "\\" + name +".txt","w")
-	logging.info("abrimos: ")
-	logging.info(MetaPath + "\\" + name +".txt")
+        logging.info("abrimos: ")
+        logging.info(MetaPath + "\\" + name +".txt")
 	print ("[+] Metadata for file: %s " %(name))
 	try:
-		logging.info("Entramos a la funcion get_exif_metadata con un valor de: " + image_path)
+                logging.info("Entramos a la funcion get_exif_metadata con un valor de: " + image_path)
 		exif = get_exif_metadata(image_path)
-		logging.info("Escribimos la metadata")
+                logging.info("Escribimos la metadata")
 		for metadata in exif:
 			fo.write("Metadata: %s - Value: %s " %(metadata, exif[metadata]) + "\n")
 	except:
 		import sys, traceback
-		logging.error("No metadata encontrada")
+                logging.error("No metadata encontrada")
 		fo.write("No Medata were founded")
         #traceback.print_exc(file=sys.stdout)
 	fo.close()
 
 def printAllMetaPDf(path,MetaPath):
+    logging.info("Entramos en la funcion")
     os.chdir(path)
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
@@ -98,6 +99,7 @@ def printAllMetaPDf(path,MetaPath):
         	fo.write((str(info.title)) + '\n')
         	fo.close()
         	print("Los Metadatos del archivo "+ name +" si es que existen se han generado en un txt.")
+                logging.info("Los metadatos del archivo "+ name +" si es que existen, se han generado en un txt.")
 
 def printOneMetaPDf(pdf_path,MetaPath):
 	name = os.path.basename(pdf_path)
@@ -124,6 +126,7 @@ def printOneMetaPDf(pdf_path,MetaPath):
 	print("Los Metadatos del archivo " + name + " si es que existen se han generado en un txt.")
 
 def printOneMetaDocx(doxc_path, MetaPath):
+        logging.info("Entramos en la funcion")
 	doc = docx.Document(doxc_path)
 	prop = doc.core_properties
 	name = os.path.basename(doxc_path)
@@ -142,8 +145,10 @@ def printOneMetaDocx(doxc_path, MetaPath):
 	fo.write("version: " + (str(prop.version)+ '\n'))
 	fo.close()
 	print("El archivo con los MetaDatos a sido creado de manera exitosa")
+        logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
 
 def printAllMetaDocx(path,MetaPath):
+        logging.info("Entramos en la funcion"
 	os.chdir(path)
 	for root, dirs, files in os.walk(".", topdown=False):
 		for name in files:
@@ -165,8 +170,10 @@ def printAllMetaDocx(path,MetaPath):
 				fo.write("version: " + (str(prop.version)+ '\n'))
 				fo.close()
 				print("El archivo con los MetaDatos a sido creado de manera exitosa")
+                                logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
 
 def printOneMetaMp3(mp3_path, MetaPath):
+        logging.info("Entramos en la funcion")
 	name = os.path.basename(mp3_path)
 	splitName = name.split(".",1)
 	oname =splitName[0]
@@ -179,8 +186,10 @@ def printOneMetaMp3(mp3_path, MetaPath):
 	fo.write("publisher: " + str(audio.tag.publisher) + '\n')
 	fo.write("genre name: " + str(audio.tag.genre.name) + '\n')
 	fo.close()
+        logging.info("Se guardo la metadata")
 
 def printAllMetaMp3(path, MetaPath):
+        logging.info("Entramos a la funcion")
 	os.chdir(path)
 	for root, dirs, files in os.walk(".", topdown=False):
 		for name in files:
@@ -195,3 +204,4 @@ def printAllMetaMp3(path, MetaPath):
 				fo.write("composer: " + str(audio.tag.composer) + '\n')
 				fo.write("publisher: " + str(audio.tag.publisher) + '\n')
 				fo.close()
+                                logging.info("Se guardo la metadata")
