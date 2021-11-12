@@ -6,7 +6,10 @@ import MetaDataPIA
 import webscraping
 import argparse
 import os, time
+import logging
+import log
 
+logging.basicConfig(filename='app.log', level=logging.INFO)
 
 if __name__ == "__main__":
   description= ("Este script realiza una gran diversa cantidad de tareas " +
@@ -31,9 +34,11 @@ if __name__ == "__main__":
   parser.add_argument("-mp", metavar= 'METAPATH', dest="metapath", type=str, help='Ruta donde se guardarán los metadatas encontrados.')
   parser.add_argument("-bus", metavar='BUSQUEDA', dest="busqueda", type=str, help='Busqueda para realizar en google')
   params = parser.parse_args()
-try: 
+try:
+    logging.info(params.tarea)
     tarea = (params.tarea)
 except Exception as e:
+    logging.error("Ocurrió un error: " + str(e))
     print(e)
     exit
 
