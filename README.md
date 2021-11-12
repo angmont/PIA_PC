@@ -7,9 +7,6 @@ _Documentación para el PIA de Programación en ciberseguridad_
 
 _Este programa esta hecho con el propósito de realizar tareas para ciberseguridad, tales como: escaneo de puertos, webscraping, envío de correos, cifrado y descifrado, sacar metadata de archivos, entre otros._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
-
 ### Pre-requisitos 📋
 
 _Se requiere tener instalado python en su versión de 3.9 y tambien los siguientes módulos de manera manual:_
