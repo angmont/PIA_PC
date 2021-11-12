@@ -34,7 +34,7 @@ if __name__ == "__main__":
   parser.add_argument("-bus", metavar='BUSQUEDA', dest="busqueda", type=str, help='Busqueda para realizar en google')
   params = parser.parse_args()
 try:
-    logging.info("Se escogio la tarea: ")
+    logging.info("Se escogió la tarea: ")
     logging.info(params.tarea)
     tarea = (params.tarea)
 except Exception as e:
@@ -139,20 +139,31 @@ try:
 
     elif tarea == 'web':
 
+        logging.info("Con el modo: ")
         modo = params.modo
+        logging.info(modo)
         if modo == 'emails' or modo == 'pdf' or modo == 'img':
             url = params.dominio
+            logging.info("El dominio es: ")
+            logging.info(url)
             if modo == 'emails':
+                logging.info("Si el \"modo\" es: emails")
                 webscraping.find_mails(url)
             elif modo == 'pdf':
+                logging.info("Si el \"modo\" es: pdf")
                 webscraping.descargar_pdfs(url)
             else:
+                logging.info("Si el \"modo\" es: img")
                 webscraping.download_images(url)
         elif modo == 'busqueda':
+            logging.info("Se realizara una busqueda en:")
             busqueda = params.busqueda
+            logging.info(busqueda)
             webscraping.busqueda_google(busqueda)
         else:
+            logging.info("Ninguna opción es valida para hacer \"Web Scrapping\" )
             print('Opcion no válida para web scraping')
 except Exception as e:
+    logging.error("Ha ocurrido un error: " + str(e))
     print(e)
     exit
