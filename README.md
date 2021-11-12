@@ -120,9 +120,9 @@ py main.py -t dns
 ```
 _Ya de ahí, se puede ir elegiendo cualquiera de las tareas previamente mencionadas:_
 
-Formatos para las funciones
+Ejemplos para las otras funciones
 ```
-py main.py -t cifrar -m 
+py main.py -t cifrar -m ciftxt -ru C:\User\user\Path -key 3
 ```
 ### Analice las pruebas end-to-end 🔩
 
