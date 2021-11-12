@@ -58,6 +58,8 @@ _Escriba lo siguiente en su terminal_
 git clone https://github.com/angmont/PIA_PC.git
 ```
 Se puede clonar desde windows con git bash o git desktop
+
+
 _Recuerde instalar los módulos_
 
 ```
