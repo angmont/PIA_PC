@@ -95,8 +95,7 @@ def descargar_pdfs(url):
         if ('.pdf' in link.get('href', [])): 
             i += 1
             print("Downloading file: ", i, "...")
-            logging.info("Descargando archivo:", i, "...")
-      
+     
             
             response = requests.get(link.get('href')) 
       
