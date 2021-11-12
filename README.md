@@ -5,17 +5,49 @@ _Documentación para el PIA de Programación en ciberseguridad_
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+_Este programa esta hecho con el propósito de realizar tareas para ciberseguridad, tales como: escaneo de puertos, webscraping, envío de correos, cifrado y descifrado, sacar metadata de archivos, entre otros._
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Se requiere tener instalado python en su versión de 3.9 y tambien los siguientes módulos de manera manual:_
 
 ```
-Da un ejemplo
+pip install python_docx
+```
+```
+pip install requests
+```
+```
+pip install pyhunter
+```
+```
+pip install openpyxl
+```
+```
+pip install tqdm
+```
+```
+pip install googlesearch_python
+```
+```
+pip install beautifulsoup4
+```
+```
+pip install eyed3
+```
+```
+pip install Pillow
+```
+```
+pip install PyPDF2
+```
+
+_O simplemente se puede clonar éste repositorio y realizar:_
+```
+pip install -r requirements.txt 
 ```
 
 ### Instalación 🔧
