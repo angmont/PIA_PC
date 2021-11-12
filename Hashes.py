@@ -11,7 +11,7 @@ def sha512(name,path):
 	Hashed = Hash.hexdigest()
 	#Escribimos en el archivo resultado el nombre del archivo y enseguida su clave HASH
 	fo.write(name + " - " + Hashed + "\n")
-#Cerramos el archivo
+	#Cerramos el archivo
 	fo.close()
 	#print("Las claves se han guardado exitosamente en el archivo de resultado")
 
@@ -43,4 +43,9 @@ def md5(name,path):
 	fo.close()
 	#print("Las claves se han guardado exitosamente en el archivo de resultado")
 
-sha512(sys.argv[2], sys.argv[1])
+if sys.argv[3] == 'md5':
+	md5(sys.argv[2], sys.argv[1])
+elif sys.argv[3] == 'sha512':
+	sha512(sys.argv[2], sys.argv[1])
+else:
+	sha256(sys.argv[2], sys.argv[1])
