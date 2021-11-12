@@ -146,7 +146,7 @@ try:
             metapath = (params.metapath)
             logging.info("Guardaremos la metadata en: " + metapath)
             if archivo == 'mp3':
-                logging.info("Ingresamos a la función printOneMetaMp3)
+                logging.info("Ingresamos a la función printOneMetaMp3")
                 metadata.printOneMetaMp3(ruta, metapath)
             else:
                 logging.info("Ingresamos a la función printAllMetaMp3")
