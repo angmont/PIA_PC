@@ -34,6 +34,7 @@ if __name__ == "__main__":
   parser.add_argument("-bus", metavar='BUSQUEDA', dest="busqueda", type=str, help='Busqueda para realizar en google')
   params = parser.parse_args()
 try:
+    logging.info("Se escogio la tarea: ")
     logging.info(params.tarea)
     tarea = (params.tarea)
 except Exception as e:
@@ -46,6 +47,7 @@ try:
 
         modo = (params.modo)
         llave = (params.llave)
+
         if (modo == 'cifmensaje') or (modo == 'desmensaje'):
             mensaje = (params.mensaje)
             if modo == 'cifmensaje':
@@ -119,10 +121,14 @@ try:
 
     elif tarea == 'puertos':	
 
+      logging.info("Se introdujo la ip: ")
       ip = params.ip
+      logging.info(ip)
       print("Se revisará la ip: " + ip)
-	
+
+      logging.info("Se escanearan los puertos: ")
       puertoss = params.puertos
+      logging.info(puertoss)
       portlist = params.puertos.split(',')
       for i in range (len(portlist)):
         print("Con los puertos: " + portlist[i])
