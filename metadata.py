@@ -34,7 +34,7 @@ def printAllMetaImg(path, MetaPath):
         		splitName = name.split(".",1)
         		oname =splitName[0]
         		fo = open(MetaPath + "\\" + name + "_Metadata.txt","w")
-                        logging.info("Abrimos")
+			logging.info("Abrimos")
                         logging.info(MetaPath + "\\" + name + "_Metadata.txt")
         		print ("[+] Metadata for file: %s " %(name))
         		try:
