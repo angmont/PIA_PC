@@ -74,7 +74,7 @@ _Primeramente, es necesario aclarar la tarea a usar con el argumento "-t"_
 ```
 py main.py -t dns
 ```
-_Ya de ahí, se puede ir elegiendo cualquiera de las siguientes tareas:
+_Ya de ahí, se puede ir elegiendo cualquiera de las siguientes tareas:_
 *cifrado
 *envio de correos
 *web scraping
