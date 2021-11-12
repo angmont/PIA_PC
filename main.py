@@ -17,7 +17,7 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser(description="PIA", epilog=description, formatter_class=argparse.RawDescriptionHelpFormatter)
   parser.add_argument("-t", metavar='TAREA', dest="tarea", choices=['cifrar','correos', 'dns', 'puertos', 'metadata', 'web'] , help='Se elige la tarea a realizar', required=True)
   parser.add_argument("-m", metavar='MODO', dest="modo", 
-  choices=['cifmensaje', 'desmensaje', 'cifgithub', 'destxt', 'ciftxt' 'busqueda', 'emails', 'pdf', 'img'] , help='Si desea utilizar la tarea de cifrado o de web scraping, es necesario especificiar el modo')
+  choices=['cifmensaje', 'desmensaje', 'cifgithub', 'destxt', 'ciftxt', 'busqueda', 'emails', 'pdf', 'img'] , help='Si desea utilizar la tarea de cifrado o de web scraping, es necesario especificiar el modo')
   parser.add_argument("-msj", metavar='MENSAJE', dest="mensaje", type=str, help='Se debe poner un mensaje el cual se quiera cifrar o descifrar.')
   parser.add_argument("-key", metavar='LLAVE', dest="llave", type=int, help='Se utiliza para saber a base de cual llave se cifra o descifra el mensaje')
   parser.add_argument("-user", metavar='USUARIO', dest="usuario", type=str, help='Es un argumento necesario para la funcion de cifrar los resultados obtenidos de la API de Github')
