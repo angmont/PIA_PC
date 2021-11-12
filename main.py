@@ -133,13 +133,13 @@ try:
         if modo == 'emails' or modo == 'pdf' or modo == 'img':
             url = params.dominio
             if modo == 'emails':
-                webscraping.find_emails(url)
+                webscraping.find_mails(url)
             elif modo == 'pdf':
                 webscraping.descargar_pdfs(url)
             else:
                 webscraping.download_images(url)
         elif modo == 'busqueda':
-            busqueda == params.busqueda
+            busqueda = params.busqueda
             webscraping.busqueda_google(busqueda)
         else:
             print('Opcion no válida para web scraping')
