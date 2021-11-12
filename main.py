@@ -98,8 +98,7 @@ try:
     elif tarea == 'dns':  
             logging.info("Se inicia la tarea de dns")
             print()
-            script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe',
-                            '-ExecutionPolicy', 'Unrestricted', './dns.ps1'], cwd=os.getcwd())
+            script_p = subprocess.Popen([r'C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe','-ExecutionPolicy', 'Unrestricted', './dns.ps1'], cwd=os.getcwd())
     
 	    script_p.wait()
 
