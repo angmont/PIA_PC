@@ -1,6 +1,7 @@
 # PIA_PC
 
 _Documentación para el PIA de Programación en ciberseguridad_
+![alt text](https://www.mejorconweb.com/images/programacion-web-barcelona.jpg)
 
 ## Comenzando 🚀
 
