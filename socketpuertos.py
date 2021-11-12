@@ -12,3 +12,4 @@ def checoPuertos(ip, portlist, puertoss):
     else:
       print("Puerto {}: \t Cerrado".format(port))
   
+logging.Funcion()
