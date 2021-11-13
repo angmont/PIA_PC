@@ -165,7 +165,7 @@ Usamos [Python](https://www.python.org/) para el versionado. Para la versión 3.
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+_Los autores de éste script son:_
 
 * **Ángela Montoya** - [angmont](https://github.com/angmont)
 * **Dariela Hurtado** - [DariHT8](https://github.com/DariHT8)
