@@ -171,7 +171,7 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 * **Dariela Hurtado** - [DariHT8](https://github.com/DariHT8)
 * **Ian Leija** - [ianisra](https://github.com/ianisra)
 * **E-mmanuel Manzanarez** - [EmanuelManzanarez](https://github.com/EmanuelManzanarez)
-* **Emiliano Leal** - [DariHT8](https://github.com/DariHT8)
+* **Emiliano Leal** - [EmilianoLeal13](https://github.com/EmilianoLeal13)
 
 ## Licencia 📄
 
