@@ -22,8 +22,8 @@ def cifrar_mensaje(mensaje, key):
     else:
         translated = translated + symbol
 
+  logging.info(translated)        
   return(translated)
-  logging.info(translated)
 
 
 def descifrar_mensaje(mensaje, key):
