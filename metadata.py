@@ -26,7 +26,7 @@ def get_exif_metadata(image_path):
 def printAllMetaImg(path, MetaPath):
     logging.info("Entramos en la función con los valores: ")
     logging.info(path)
-    logging,info(MetaPath)
+    logging.info(MetaPath)
     os.chdir(path)
     for root, dirs, files in os.walk(".", topdown=False):
         for name in files:
