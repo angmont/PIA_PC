@@ -170,7 +170,7 @@ _Los autores de éste script son:_
 * **Ángela Montoya** - [angmont](https://github.com/angmont)
 * **Dariela Hurtado** - [DariHT8](https://github.com/DariHT8)
 * **Ian Leija** - [ianisra](https://github.com/ianisra)
-* **E-mmanuel Manzanarez** - [EmanuelManzanarez](https://github.com/EmanuelManzanarez)
+* **E-manuel Manzanarez** - [EmanuelManzanarez](https://github.com/EmanuelManzanarez)
 * **Emiliano Leal** - [EmilianoLeal13](https://github.com/EmilianoLeal13)
 
 ## Licencia 📄
