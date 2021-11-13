@@ -48,7 +48,6 @@ try:
         modo = (params.modo)
         logging.info("El modo es: " + modo)
         llave = (params.llave)
-        logging.info("La llave es: " + llave)
 
         if (modo == 'cifmensaje') or (modo == 'desmensaje'):
             mensaje = (params.mensaje)
