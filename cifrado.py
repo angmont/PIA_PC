@@ -48,8 +48,8 @@ def descifrar_mensaje(mensaje, key):
     else:
         translated = translated + symbol
 
- return(translated)
  logging.info(translated)
+ return(translated)
 
 def cifrar_github(usuario, clave):
   logging.info("Estamos en cifrar_github")
