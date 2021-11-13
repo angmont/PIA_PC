@@ -124,7 +124,7 @@ def printOneMetaPDf(pdf_path,MetaPath):
 	print("Los Metadatos del archivo " + name + " si es que existen se han generado en un txt.")
 
 def printOneMetaDocx(doxc_path, MetaPath):
-        logging.info("Entramos en la funcion")
+	logging.info("Entramos en la funcion")
 	doc = docx.Document(doxc_path)
 	prop = doc.core_properties
 	name = os.path.basename(doxc_path)
@@ -143,7 +143,7 @@ def printOneMetaDocx(doxc_path, MetaPath):
 	fo.write("version: " + (str(prop.version)+ '\n'))
 	fo.close()
 	print("El archivo con los MetaDatos a sido creado de manera exitosa")
-        logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
+	logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
 
 def printAllMetaDocx(path,MetaPath):
         logging.info("Entramos en la funcion"
