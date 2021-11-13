@@ -146,7 +146,7 @@ def printOneMetaDocx(doxc_path, MetaPath):
 	logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
 
 def printAllMetaDocx(path,MetaPath):
-	logging.info("Entramos en la funcion"
+	logging.info("Entramos en la funcion")
 	os.chdir(path)
 	for root, dirs, files in os.walk(".", topdown=False):
 		for name in files:
