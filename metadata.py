@@ -177,13 +177,16 @@ def printOneMetaMp3(mp3_path, MetaPath):
 	oname =splitName[0]
 	fo = open(MetaPath + "\\" + oname + "_Metadata.txt","w")
 	audio=eyed3.load(mp3_path)
-	fo.write("title: " + str(audio.tag.title) + '\n')
-	fo.write("artist: " + str(audio.tag.artist) + '\n')
-	fo.write("album_artist: " + str(audio.tag.album_artist) + '\n')
-	fo.write("composer: " + str(audio.tag.composer) + '\n')
-	fo.write("publisher: " + str(audio.tag.publisher) + '\n')
-	fo.write("genre name: " + str(audio.tag.genre.name) + '\n')
-	fo.close()
+	try:
+		fo.write("title: " + str(audio.tag.title) + '\n')
+		fo.write("artist: " + str(audio.tag.artist) + '\n')
+		fo.write("album_artist: " + str(audio.tag.album_artist) + '\n')
+		fo.write("composer: " + str(audio.tag.composer) + '\n')
+		fo.write("publisher: " + str(audio.tag.publisher) + '\n')
+		fo.write("genre name: " + str(audio.tag.genre.name) + '\n')
+		fo.close()
+	except:
+		fo.close()
 	logging.info("Se guardo la metadata")
 
 def printAllMetaMp3(path, MetaPath):
