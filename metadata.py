@@ -146,7 +146,7 @@ def printOneMetaDocx(doxc_path, MetaPath):
 	logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
 
 def printAllMetaDocx(path,MetaPath):
-        logging.info("Entramos en la funcion"
+	logging.info("Entramos en la funcion"
 	os.chdir(path)
 	for root, dirs, files in os.walk(".", topdown=False):
 		for name in files:
@@ -168,10 +168,10 @@ def printAllMetaDocx(path,MetaPath):
 				fo.write("version: " + (str(prop.version)+ '\n'))
 				fo.close()
 				print("El archivo con los MetaDatos a sido creado de manera exitosa")
-                                logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
+				logging.info("El archivo con los MetaDatos a sido creado de manera exitosa")
 
 def printOneMetaMp3(mp3_path, MetaPath):
-        logging.info("Entramos en la funcion")
+	logging.info("Entramos en la funcion")
 	name = os.path.basename(mp3_path)
 	splitName = name.split(".",1)
 	oname =splitName[0]
@@ -184,10 +184,10 @@ def printOneMetaMp3(mp3_path, MetaPath):
 	fo.write("publisher: " + str(audio.tag.publisher) + '\n')
 	fo.write("genre name: " + str(audio.tag.genre.name) + '\n')
 	fo.close()
-        logging.info("Se guardo la metadata")
+	logging.info("Se guardo la metadata")
 
 def printAllMetaMp3(path, MetaPath):
-        logging.info("Entramos a la funcion")
+	logging.info("Entramos a la funcion")
 	os.chdir(path)
 	for root, dirs, files in os.walk(".", topdown=False):
 		for name in files:
@@ -202,4 +202,4 @@ def printAllMetaMp3(path, MetaPath):
 				fo.write("composer: " + str(audio.tag.composer) + '\n')
 				fo.write("publisher: " + str(audio.tag.publisher) + '\n')
 				fo.close()
-                                logging.info("Se guardo la metadata")
+				logging.info("Se guardo la metadata")
