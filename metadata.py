@@ -83,7 +83,7 @@ def printAllMetaPDf(path,MetaPath):
                                 file = PdfFileReader(f)
                                 info = file.getDocumentInfo()
                                 number_of_pages = file.getNumPages()       
-        	fo.write("Numero de paginas: ")
+                fo.write("Numero de paginas: ")
                 fo.write((str(number_of_pages)) + '\n')
                 fo.write("Autor: ")
                 fo.write((str(info.author)) + '\n')
