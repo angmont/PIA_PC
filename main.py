@@ -52,7 +52,7 @@ try:
 
         if (modo == 'cifmensaje') or (modo == 'desmensaje'):
             mensaje = (params.mensaje)
-            logging.info("El mensaje es: " + mensaje)
+            logging.info("El mensaje es: " + str(mensaje))
             if modo == 'cifmensaje':
                 print(cifrado.cifrar_mensaje(mensaje, llave))
             else:
